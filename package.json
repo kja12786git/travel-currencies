@@ -1,0 +1,24 @@
+{
+  "name": "winter-break-homework",
+  "version": "1.0.0",
+  "description": "![](https://media.giphy.com/media/3o84sHZ1291qLdjhGU/giphy.gif)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.generalassemb.ly:kjerrya/WINTER-BREAK-HOMEWORK.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.14.7",
+    "path": "^0.12.7"
+  }
+}
