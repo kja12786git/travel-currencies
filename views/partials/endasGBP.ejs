@@ -71,7 +71,7 @@ sel.amount.onfocus = () => {
       let amount = sel.amount.value;
       let to = sel.to.value;
       let from = sel.from.value;
-      let tofrom = "." + sel.tofrom();
+      let tofrom = sel.tofrom();
       let results = sel.amountre;
         logs(`value changed to ${amount}. ${to} is to & ${from} is from. Then it's ${tofrom}...`);
 

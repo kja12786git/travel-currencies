@@ -25,6 +25,7 @@ const sel = {
               let x = sel.from.value;
               x = `${x}${sel.to.value}`;
               return x;
+
   }
 
 }
@@ -75,8 +76,8 @@ sel.amount.onfocus = () => {
           currency();
         } //end if check for set values
 
-        logs((`${JSONstringify(stored.amountres[0])} wth`));
-        let x = stored.amountres[0].quotes;
+        let x = stored.amountres[0];
+        logs(x + " what's up with this array?")
         results.value = (`${amount} * ${x}.${tofrom}`);
 
       }
