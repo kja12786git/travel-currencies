@@ -1,5 +1,5 @@
 // it's static results
-// find a way to pull it mayve via setInterval
+// find a way to pull it maybe via setInterval
 
 module.exports = [
   {
@@ -177,6 +177,7 @@ module.exports = [
         "USDZMK": 9001.203593,
         "USDZMW": 9.960363,
         "USDZWL": 322.355011
+
     }
 }
 ];

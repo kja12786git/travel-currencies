@@ -30,16 +30,16 @@ sel.amount.onfocus = () => {
 
     this.onchange = () => {
     let amount = sel.amount.value;
-    let to = sel.to.value;
-    let from = sel.from.value;
+//    let to = sel.to.value;
+//    let from = sel.from.value;
     logs(`value changed to ${amount}. ${to} is to & ${from} is from.`);
 
       if ((amount != null) && (from != null) && (to != undefined)) {
 
-        currency(to,from);
+        currency();
 
-        // to set resturn on the DOM
-        amountre.value = toString(amountres[0]);
+        // to set return on the DOM
+        sel.amountre.value = toString(amountres[0]);
 
       } //end if check for set values
 
@@ -54,20 +54,23 @@ const currency = (to, from) => {
 
   // execute the conversion using the "convert" endpoint
           $.ajax({
-              url: 'http://apilayer.net/api/' + endpoint + '?access_key=' + access_key +'&from=' + from + '&to=' + to + '&amount=' + amount,
+//            url: 'http://apilayer.net/api/' + endpoint + '?access_key=' + access_key +'&from=' + from + '&to=' + to + '&amount=' + amount,
+              url: `http://apilayer.net/api/live?access_key=${access_key}`,
               dataType: 'jsonp',
               success: function(json) {
-
                   // access the conversion result in json.result
-                  logs(json.result);
-                  stored.prevres.push(amountres[0]);
-                  stored.amountres.pop();
-                  stored.amountres.push(json.result);
+                  logs(json.quotes);
+//                  stored.prevres.push(amountres[0]);
+//                  stored.amountres.pop();
+//                  stored.amountres.push(json.result);
 
               }
           }) //end ajax call
 
 }
+
+// update ajax call with setInterval
+setInterval(currency, 10000);
 
 </script>
 

@@ -2,11 +2,11 @@
 
 <h2>Select To Convert Your Currency Below:<h2>
 <ul>
-  <li><input id="amount" type="number" placeholder="1"></li>
-  <li><input id="from" method="post" maxlength="3" type="text" placeholder="USD"></li>
-  <br><li><< to >></li>
-  <li><input id="to" maxlength="3" type="text" placeholder="###"></li>
-  <br><li><input id="amount-alt" type="number" placeholder="set to from first"></li>
+  <li>How many units?<br><input id="amount" type="number" placeholder="1"></li><br>
+  <li>Base Currency: <input id="from" method="post" maxlength="3" type="text" value="USD" disabled></li><br>
+  <li><< to >></li><br>
+  <li>Desired Currency: <input id="to" method="post" maxlength="3" type="text" placeholder="__"></li><br>
+  <li>Result: <input id="amount-alt" placeholder="__"><%# data.converted %>  <!-- worry about a inverse in an upgrade instead --></li>
 
 </ul>
 

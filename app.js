@@ -7,7 +7,7 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const port = process.env.PORT || 1234;
-const currencies = require('./db/currencyLayer.js');
+// got this via ajax instead => const currencies = require('./db/currencyLayer');
 
 // this main app var
 const app = express();
@@ -15,7 +15,7 @@ const app = express();
 app.use(express.static('public'));
 app.use(logger('dev'));
 
-//for non-public data
+//for securing data on the server-side
 require('dotenv').config();
 
 // set ejs as views engine and use views directory for templates
@@ -31,17 +31,20 @@ app.listen(port, () => {
 // default index response
 app.get('/', (req,res) => {
 //  res.send(`Server's ready...`)
-  res.render('index');
+  res.render('index'), {
+    data: data,
+
+  };
 
 })
 
 // display all data at this route
 app.get('/currencies', (req,res) => {
-  res.json(currencies[0]);
+  res.json(currencies[0].quotes);
 
 })
 
-//temporary display key
+// temporary display keys
 app.get('/currencies/quotes', (req,res) => {
   res.json(currencies[0].quotes);
 
