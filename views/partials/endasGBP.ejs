@@ -2,7 +2,8 @@
 const logs = console.log;
 // set currency calculator return
 
-/* define from currency, to currency, and amount using native vanJS... but this ajax does need jQuery */
+/* define from currency, to currency, and amount
+ using native vanJS... but this ajax does need jQuery */
 
 // object with arrs to store data & results
 const stored = {
@@ -24,6 +25,7 @@ const sel = {
   tofrom: () => {
               let x = sel.from.value;
               x = `${x}${sel.to.value}`;
+  //              logs(`Query req is ${x}`),
               return x;
   }
 
@@ -31,7 +33,8 @@ const sel = {
 
 const currency = () => {
   let endpoint = 'convert'; // only for endpoint currencylayer api
-  let access_key = 'f837ff23f547c798a627fc281c063f05'; //  let access_key = '19b3253e311dac1b4eb26daef9c1c988';
+//  let access_key = '19b3253e311dac1b4eb26daef9c1c988';
+  let access_key = 'f837ff23f547c798a627fc281c063f05';
   let feedto = sel.amountre;
   let tofrom = sel.tofrom();
   logs(`${tofrom} tofrom value`)
@@ -45,8 +48,10 @@ const currency = () => {
                   logs(json.quotes);
                   stored.amountres.push(json);
 
-              }
+/*                  stored.amountres.pop();
+                  stored.amountres.push(json.quotes);*/
 
+              }
 
           }) //end ajax call
         } // end stored.amountres.length if query
@@ -66,18 +71,15 @@ sel.amount.onfocus = () => {
       let amount = sel.amount.value;
       let to = sel.to.value;
       let from = sel.from.value;
+      let tofrom = "." + sel.tofrom();
       let results = sel.amountre;
-      let tofrom = sel.tofrom();
-
         logs(`value changed to ${amount}. ${to} is to & ${from} is from. Then it's ${tofrom}...`);
 
-        if ((amount != undefined) && (from != undefined) && (to != (null || "__"))) {
+        if ((amount != undefined) && (from != undefined) && (to != undefined)) {
           currency();
-        } //end if check for set values
+          results.value = amount * stored.amountres[0].quotes.USDGBP;
 
-        logs((`${JSONstringify(stored.amountres[0])} wth`));
-        let x = stored.amountres[0].quotes;
-        results.value = (`${amount} * ${x}.${tofrom}`);
+        } //end if check for set values
 
       }
 

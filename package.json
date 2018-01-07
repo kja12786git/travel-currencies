@@ -4,11 +4,14 @@
   "description": "![](https://media.giphy.com/media/3o84sHZ1291qLdjhGU/giphy.gif)",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon main"
+
   },
   "repository": {
     "type": "git",
     "url": "git@git.generalassemb.ly:kjerrya/WINTER-BREAK-HOMEWORK.git"
+
   },
   "author": "",
   "license": "ISC",
@@ -20,5 +23,6 @@
     "morgan": "^1.9.0",
     "nodemon": "^1.14.8",
     "path": "^0.12.7"
+
   }
 }

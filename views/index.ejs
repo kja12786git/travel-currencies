@@ -1,31 +1,15 @@
 <% include ./partials/header.ejs %>
 
-<h2>Select To Convert Your Currency Below:<h2>
+<h1>Convert Currency Below:<h1>
 <ul>
-  <li>How many units?<br><input id="amount" type="number" placeholder="1"></li><br>
+  <li>How many units?<br><input id="amount" type="number" placeholder="?$"></li><br>
   <li>Base Currency: <input id="from" method="post" maxlength="3" type="text" value="USD" disabled></li><br>
   <li><< to >></li><br>
-  <li>Desired Currency: <input id="to" method="post" maxlength="3" type="text" value="GBP" disabled></li><br>
-  <li>Result: <input id="amount-alt" placeholder="__"><%# data.converted %>  <!-- worry about a inverse in an upgrade instead --></li>
+  <li>Destination Currency: <input id="to" method="post" maxlength="3" type="text" value="GBP" disabled></li><br>
+  <li>Result: <input id="amount-alt" placeholder="0" disabled>  <!-- worry about a inverse in an upgrade instead --></li>
 
 </ul>
 
-<h3>Map for the destination currency:</h3>
-<%# placeholderdata %>
-<div style="width: 550px; height: 550px; position: relative;">
-    <div id="map"></div>
-</div>
-<!-- map will need additional configuration for markers and change relative to user input -->
-    <script>
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3N9SoFxe9fdnuCvaJ9JHCZWVK1ulUV2I&callback=initMap"
-    async defer></script>
+<h3><a href="/map">Check out an informative map of your destination currency!</a></h3>
 
-<% include ./partials/end.ejs %>
+<% include ./partials/endasGBP.ejs %>

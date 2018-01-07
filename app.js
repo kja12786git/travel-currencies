@@ -7,15 +7,21 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const port = process.env.PORT || 1234;
-// got this via ajax instead => const currencies = require('./db/currencyLayer');
+const bodyParser = require('body-parser');
+
+//db files
+const currencies = require('./db/currencyLayer');
 
 // this main app var
 const app = express();
 
+// middleware
 app.use(express.static('public'));
 app.use(logger('dev'));
+app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({extended: false}));
 
-//for securing data on the server-side
+// for securing data on the server-side
 require('dotenv').config();
 
 // set ejs as views engine and use views directory for templates
@@ -29,14 +35,17 @@ app.listen(port, () => {
 })
 
 // default index response
-app.get('/', (req,res) => {
-//  res.send(`Server's ready...`)
+app.get('/', (req,res) => { //  res.send(`Server's ready...`)
   res.render('index'), {
-    data: data,
+    data: data
 
   };
 
 })
+
+// fwd to mapRouter
+const mapsRoutes = require('./routes/maps.js');
+//app.use('/maps', mapsRoutes);
 
 // display all data at this route
 app.get('/currencies', (req,res) => {
