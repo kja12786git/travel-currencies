@@ -41,7 +41,9 @@ Include images of your wireframes.
 ## App Components
 
   As part of MVP:
+  
     One page user experience...
+
     1. Form for user input amount and pulls data on user change.
     2. Base currency set based on api.
     3. Destination currency selectable.
