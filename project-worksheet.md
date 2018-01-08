@@ -37,6 +37,8 @@ Include the full list of features that you are considering for POST MVP
 ## Wireframes
 
 Include images of your wireframes.
+![required pages](/readmefiles/requiredpages.jpg)
+![estimated time matrix](/readmefiles/requiredpages.jpg)
 
 ## App Components
 
@@ -68,7 +70,6 @@ Include images of your wireframes.
 
 ### Getting Items
   ** Selecting a currency will pull additional details from the database to enhance the DOM display. **
-
 
 ## Functional Components
 
