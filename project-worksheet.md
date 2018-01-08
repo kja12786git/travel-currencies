@@ -20,54 +20,61 @@ Use this section to describe your final project and perhaps any links to relevan
 
 ## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matix.  
+Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.
 
-## MVP 
+## MVP
 
-Include the full list of features that will be part of your MVP 
+Include the full list of features that will be part of your MVP
+
+  ** An input form which user can insert amount of base currency then they receive a result based on the selected destination currency. **
 
 ## POST MVP
 
 Include the full list of features that you are considering for POST MVP
 
+  ** A map using google maps api which corresponds to the destination currency.**
+
 ## Wireframes
 
-Include images of your wireframes. 
+Include images of your wireframes.
+
 
 ## App Components
 
-### Creating Items
 
+### Creating Items
+  ** A user  ought to be able to add most currencies not listed on the default list. **
 
 ### Deleting Items
-
+  ** A user ought to be able to remove a currency from those available. **
 
 ### Editing Items
-
+  ** A user ought to be able to edit currency detail such as name of country or change symbol detail from those available. **
 
 ### Getting Items
-
+  ** Selecting a currency will pull additional details from the database to enhance the DOM display. **
 
 
 ## Functional Components
 
-Based on the initial logic defined in the previous game phases section try and breakdown the logic further into functional components, and by that we mean functions.  Does your logic indicate that code could be encapsulated for the purpose of reusablility.  Once a function has been defined it can then be incorporated into a class as a method. 
+Based on the initial logic defined in the previous game phases section try and breakdown the logic further into functional components, and by that we mean functions.  Does your logic indicate that code could be encapsulated for the purpose of reusablility.  Once a function has been defined it can then be incorporated into a class as a method.
 
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. 
+Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted.
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
+| Component 1 | H | 10hrs| 12hrs | 12hrs |
 | Component 1 | H | 10hrs| 12hrs | 12hrs |
 
 ## Helper Functions
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
 
-| Function | Description | 
+| Function | Description |
 | --- | :---: |  
-| Capitalize | This will capitalize the first letter in a string | 
+| Capitalize | This will capitalize the first letter in a string |
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project. 
+ Use this section to list all supporting libraries and thier role in the project.
 
 ## Code Snippet
 

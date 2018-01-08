@@ -1,6 +1,7 @@
 <% include ./partials/header.ejs %>
 
 <h1>Convert Currency Below:<h1>
+<form method="POST" action="nopagechange">
 <ul>
   <li>How many units?<br><input id="amount" type="number" placeholder="?$"></li><br>
   <li>Base Currency: <input id="from" class="currency" method="post" maxlength="3" type="text" value="USD" disabled></li><br>
@@ -8,7 +9,7 @@
   <li>Result: <input id="amount-alt" placeholder="0" disabled>  <!-- worry about a inverse in an upgrade instead --></li>
 
 </ul>
-
+</form>
 <h3><a href="/maps">Check out an informative map of your destination currency!</a></h3>
 
 <% include ./partials/endasGBP.ejs %>
