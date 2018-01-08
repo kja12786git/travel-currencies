@@ -38,15 +38,28 @@ Include the full list of features that you are considering for POST MVP
 
 Include images of your wireframes.
 
-
 ## App Components
 
+  As part of MVP:
+    One page user experience...
+    1. Form for user input amount and pulls data on user change.
+    2. Base currency set based on api.
+    3. Destination currency selectable.
+    4. Result returns calculated amount * value of selected currency.
+
+    Editable Data (beyond the initial experience)
+    5. User can add destination currencies not listed to use in form.
+    6. User can remove or edit details of existing destination currency such as name of country associated with symbol.
+
+    Additional  
+    7. Layout design.
+    8. Google maps page using google maps api corresponds to destination currency.
 
 ### Creating Items
-  ** A user  ought to be able to add most currencies not listed on the default list. **
+  ** A user ought to be able to add most currencies not listed on the default list. **
 
 ### Deleting Items
-  **** A user ought to be able to remove a currency from those available.
+  ** A user ought to be able to remove a currency from those available. **
 
 ### Editing Items
   ** A user ought to be able to edit currency detail such as name of country or change symbol detail from those available. **
@@ -63,18 +76,19 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Component 1 | H | 10hrs| 12hrs | 12hrs |
-| Component 1 | H | 10hrs| 12hrs | 12hrs |
+| The Initial Experience | H | 10hrs| 12hrs | 12hrs |
+| Editable Data | H | 10hrs| 12hrs | 12hrs |
+| Layout and Maps | H | 10hrs| 12hrs | 12hrs |
 
 ## Helper Functions
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
 
 | Function | Description |
 | --- | :---: |  
-| Capitalize | This will capitalize the first letter in a string |
+| Pending | I can share some code snippet here |
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project.
+ jQuery may be used for some basic DOM functions.
 
 ## Code Snippet
 
