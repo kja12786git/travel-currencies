@@ -3,5 +3,8 @@
 INSERT INTO currencies (symbol, country, gfxcode) VALUES
   ('YEN', 'Japan', '¥'),
   ('AUD', 'Australia', '$'),
+  ('CAD', 'Canada', '$'),
   ('USD', 'United States', '$'),
-  ('GBP', 'United Kingdom', '£'),
+  ('EUR', 'Spain', '€'),
+  ('EUR', 'France', '€'),
+  ('GBP', 'United Kingdom', '£')

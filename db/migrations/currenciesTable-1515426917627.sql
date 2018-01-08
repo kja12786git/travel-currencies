@@ -2,7 +2,8 @@
 
 CREATE TABLE IF NOT EXISTS currencies (
   id BIGSERIAL PRIMARY KEY,
-  symbol VARCHAR(255),
-  name TEXT
+  symbol TEXT,
+  country VARCHAR(255),
+  gfxcode TEXT
 
 )
