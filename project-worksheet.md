@@ -41,7 +41,7 @@ Include images of your wireframes.
 ## App Components
 
   As part of MVP:
-  
+
     One page user experience...
 
     1. Form for user input amount and pulls data on user change.
@@ -78,7 +78,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| The Initial Experience | H | 16hrs| 12hrs | - |
+| The Initial Experience | H | 16hrs| 4hrs | - |
 | Editable Data | H | 5| - | - |
 | Reworking/Polishing | H | 5| - | - |
 | FE/Layout and Maps | L | 3| 1 | - |
