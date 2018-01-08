@@ -6,8 +6,8 @@ const logs = console.log;
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const port = process.env.PORT || 1234;
 const bodyParser = require('body-parser');
+const port = process.env.PORT || 1234;
 
 //db files
 const currencies = require('./db/currencyLayer');
@@ -39,16 +39,13 @@ app.get('/', (req,res) => { //  res.send(`Server's ready...`)
 
 })
 
-// fwd to mapRouter
+// fwd to Routers
 const mapsRoutes = require('./routes/maps');
 app.use('/maps', mapsRoutes);
 app.use('/map', mapsRoutes);
 
-// display all data at this route
-app.get('/currencies', (req,res) => {
-  res.json(currencies[0].quotes);
-
-})
+const currencyRoutes = require('./routes/currencies');
+app.use('/currencies', currencyRoutes)
 
 // temporary display keys
 app.get('/currencies/quotes', (req,res) => {

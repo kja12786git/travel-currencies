@@ -1,5 +1,6 @@
 // it's static results
 // find a way to pull it maybe via setInterval
+// ...
 // used customized ajax, will not need to export this at this time
 
 module.exports = [
