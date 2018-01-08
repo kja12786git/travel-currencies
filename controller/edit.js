@@ -1,10 +1,13 @@
-const editModel = require('./models/edit');
+const editModel = require('../models/edit');
 const editController = {};
 
 editController.index = (req,res) => {
-  editModel.
   res.render('edit');
 
 }
+/*editController.delete = (req,res) => {
+//  editModel.destroy
+
+}*/
 
 module.exports = editController;

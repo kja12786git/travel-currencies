@@ -24,4 +24,4 @@ function setDatabase() {
 
 const db = setDatabase();
 
-modules.exports = db;
+module.exports = db;
