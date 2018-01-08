@@ -46,7 +46,7 @@ Include images of your wireframes.
   ** A user  ought to be able to add most currencies not listed on the default list. **
 
 ### Deleting Items
-  ** A user ought to be able to remove a currency from those available. **
+  **** A user ought to be able to remove a currency from those available.
 
 ### Editing Items
   ** A user ought to be able to edit currency detail such as name of country or change symbol detail from those available. **
