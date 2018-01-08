@@ -45,7 +45,10 @@ app.use('/maps', mapsRoutes);
 app.use('/map', mapsRoutes);
 
 const currencyRoutes = require('./routes/currencies');
-app.use('/currencies', currencyRoutes)
+app.use('/currencies', currencyRoutes);
+
+const editRoutes = require('./routes/edit');
+app.use('/edit', editRoutes);
 
 // temporary display keys
 app.get('/currencies/quotes', (req,res) => {
