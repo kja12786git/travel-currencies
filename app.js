@@ -15,7 +15,6 @@ const currencies = require('./db/currencyLayer');
 // this main app var
 const app = express();
 
-// middleware
 app.use(express.static('public'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -36,16 +35,14 @@ app.listen(port, () => {
 
 // default index response
 app.get('/', (req,res) => { //  res.send(`Server's ready...`)
-  res.render('index'), {
-    data: data
-
-  };
+  res.render('index');
 
 })
 
 // fwd to mapRouter
-const mapsRoutes = require('./routes/maps.js');
-//app.use('/maps', mapsRoutes);
+const mapsRoutes = require('./routes/maps');
+app.use('/maps', mapsRoutes);
+app.use('/map', mapsRoutes);
 
 // display all data at this route
 app.get('/currencies', (req,res) => {
@@ -60,7 +57,7 @@ app.get('/currencies/quotes', (req,res) => {
 })
 
 // 404 for odd navigation
-app.get('*', (req,res) => {
+/*app.get('*', (req,res) => {
   res.status(404).send(`Nothing located at this url.`);
 
-})
+})*/

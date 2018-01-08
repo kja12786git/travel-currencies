@@ -1,7 +1,15 @@
 const express = require('express');
-const mapRoutes = express.Router();
+const path = require('path');
+const mapRoute = express.Router();
 
-mapRoutes.get('/maps', (req,res) => {
-  res.render('/maps')
+mapRoute.get('/', (req,res) => {
+  res.render('map');
 
 })
+
+mapRoute.get('/*', (req, res) => {
+  res.status(404).send('Nothing found here!');
+
+})
+
+module.exports = mapRoute;
