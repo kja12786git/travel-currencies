@@ -6,9 +6,4 @@ cController.index = (req,res) => {
 
 }
 
-cController.addnew = (req, res) => {
-
-
-}
-
 module.exports = cController;
