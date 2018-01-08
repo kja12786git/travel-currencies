@@ -37,8 +37,8 @@ Include the full list of features that you are considering for POST MVP
 ## Wireframes
 
 Include images of your wireframes.
-![required pages](/readmefiles/requiredpages.jpg)
-![estimated time matrix](/readmefiles/requiredpages.jpg)
+![required pages](https://git.generalassemb.ly/kjerrya/PROJECT-2-PROMPT/blob/master/readmefiles/requirepages.jpg)
+![estimated time matrix](https://git.generalassemb.ly/kjerrya/PROJECT-2-PROMPT/blob/master/readmefiles/timeestimates.jpg)
 
 ## App Components
 
