@@ -77,8 +77,8 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | The Initial Experience | H | 10hrs| 12hrs | 12hrs |
-| Editable Data | H | 10hrs| 12hrs | 12hrs |
-| Layout and Maps | H | 10hrs| 12hrs | 12hrs |
+| Editable Data | H | -| - | - |
+| Layout and Maps | H | -| - | - |
 
 ## Helper Functions
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
