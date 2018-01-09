@@ -7,6 +7,7 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 const port = process.env.PORT || 1234;
 
 //db files
@@ -15,10 +16,12 @@ const currencies = require('./db/currencyLayer');
 // this main app var
 const app = express();
 
+// set app to use dependencies
 app.use(express.static('public'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(methodOverride('_method'));
 
 // for securing data on the server-side
 require('dotenv').config();

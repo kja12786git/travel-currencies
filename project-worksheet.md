@@ -21,24 +21,25 @@ Use this section to describe your final project and perhaps any links to relevan
 ## Priority Matrix
 
 Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.
+![estimated time matrix](https://git.generalassemb.ly/kjerrya/PROJECT-2-PROMPT/blob/master/readmefiles/timeestimates.jpg)
+
 
 ## MVP
 
 Include the full list of features that will be part of your MVP
 
-  ** An input form which user can insert amount of base currency then they receive a result based on the selected destination currency. **
+  **An input form which user can insert amount of base currency then they receive a result based on the selected destination currency.**
 
 ## POST MVP
 
 Include the full list of features that you are considering for POST MVP
 
-  ** A map using google maps api which corresponds to the destination currency.**
+  **A map using google maps api which corresponds to the destination currency.**
 
 ## Wireframes
 
 Include images of your wireframes.
 ![required pages](https://git.generalassemb.ly/kjerrya/PROJECT-2-PROMPT/blob/master/readmefiles/requirepages.jpg)
-![estimated time matrix](https://git.generalassemb.ly/kjerrya/PROJECT-2-PROMPT/blob/master/readmefiles/timeestimates.jpg)
 
 ## App Components
 

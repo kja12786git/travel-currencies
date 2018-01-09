@@ -6,5 +6,9 @@ const editController = require('../controller/edit');
 editRoute.get('/', editController.index);
 editRoute.get('/add', editController.add);
 editRoute.get('/del', editController.delete);
+editRoute.get('/*', (req, res) => {
+  res.status(404).send('Nothing found here!');
+
+})
 
 module.exports = editRoute;

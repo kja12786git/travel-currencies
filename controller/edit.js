@@ -7,30 +7,40 @@ editController.index = (req,res) => {
 }
 
 editController.show = (req, res) => {
-  editModel.findById(req.params.id)
-    .then(data => {
-      res.render('edit/show', {
-        data:data
-        
-      })
 
-    })
 
 }
 
 editController.add = (req,res) => {
-  editModel.create
+  editModel.update({
+
+  })
 
 }
 
 editController.update = (req,res) => {
+  editModel.update({
+    symbol: req.body.symbol,
+    country: req.body.country,
+    gfxicon: req.body.symbol
 
+  })
+  .then(() => {
+    res.redirect(`/`);
+
+  })
+  .catch(err => {
+    res.status(500).json(err);
+
+  })
 
 }
-
+/*
 editController.delete = (req,res) => {
+  editModel.delete({
 
+  })
 
-}
+}*/
 
 module.exports = editController;
