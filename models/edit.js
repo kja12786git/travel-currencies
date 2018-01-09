@@ -9,23 +9,24 @@ Edit.findAll = () => {
 
 // Find and return a currencies item by id
 Edit.findById = (id) => {
-  return db.query(`SELECT * FROM currencies WHERE id = $1`, [id])
+  return db.query(`SELECT country FROM currencies WHERE id = $1`, [id])
 
 }
 
-// CREATE new currencies data
+// INSERT/create new currency row in table data
 Edit.create = (data) => {
   return db.one(
     `
       INSERT INTO currencies
-      (one, two)
-      VALUES ($1, $2) RETURNING *
+      (symbol, country, gfxcode)
+      VALUES ($1, $2, $3) RETURNING *
     `,
-    [currencies.one, currencies.two]
+    [currencies.symbol, currencies.country, currencies.gfxcode]
+
   );
 };
 
-// Find one id and delete from currencies
+// Find one id and delete from currencies table
 Edit.destroy = (id) => {
   return db.one(
     `
