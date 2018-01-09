@@ -3,7 +3,7 @@ const db = require('../db/config');
 const Edit = {};
 
 Edit.findAll = () => {
-  return db.query(`SELECT * FROM currencies ORDER by country DSC`)
+  return db.query(`SELECT * FROM currencies ORDER by country DESC`)
 
 }
 
