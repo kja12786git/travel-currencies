@@ -46,7 +46,7 @@ const currency = () => {
               success: function(json) {
                   //log pulled data
                   logs(json.quotes);
-                  stored.amountres.push(json);
+                  stored.amountres.push(json.quotes);
 
 /*                  stored.amountres.pop();
                   stored.amountres.push(json.quotes);*/
@@ -71,19 +71,28 @@ sel.amount.onfocus = () => {
       let amount = sel.amount.value;
       let to = sel.to.value;
       let from = sel.from.value;
-      let tofrom = sel.tofrom();
       let results = sel.amountre;
+      let tofrom = sel.tofrom();
+
         logs(`value changed to ${amount}. ${to} is to & ${from} is from. Then it's ${tofrom}...`);
 
-        if ((amount != undefined) && (from != undefined) && (to != undefined)) {
+        if ((amount != undefined) && (from != undefined) && (to != (null || "__"))) {
           currency();
-          results.value = amount * stored.amountres[0].quotes.USDGBP;
 
         } //end if check for set values
+
+        let x = stored.amountres[0];
+        logs(x, " what's up with this object?");
+
+        var topH1 = document.getElementById('anelement');
+        topH1.innerHTML = sel.to.value;
+
+        results.value = amount * x.USDGBP;
 
       }
 
 }
+
 
 // when currency 'to' value changes, pull this and return
 // to attach to base curr value for combined
