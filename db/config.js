@@ -1,8 +1,10 @@
 const options = {
-    query: (e) => {
-        console.log(e.query);
-
-    }
+  receive: (data, result, e) => {
+    console.log("this is from receive: ", e.query)
+  },
+  query: (e) => {
+    console.log("this is e.query:", e.query)
+  }
 };
 
 const pgp = require('pg-promise')(options);

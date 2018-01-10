@@ -2,7 +2,7 @@
 const logger = require('morgan');
 const logs = console.log;
 
-// dependency components for server
+// dependency components for serv er
 const express = require('express');
 const router = express.Router();
 const path = require('path');
@@ -37,10 +37,8 @@ app.listen(port, () => {
 })
 
 // default index response
-app.get('/', (req,res) => { //  res.send(`Server's ready...`)
-  res.render('index');
-
-})
+const editRoutes = require('./routes/edit');
+app.use('/', editRoutes);
 
 // fwd to Routers
 const mapsRoutes = require('./routes/maps');
@@ -50,7 +48,7 @@ app.use('/map', mapsRoutes);
 const currencyRoutes = require('./routes/currencies');
 app.use('/currencies', currencyRoutes);
 
-const editRoutes = require('./routes/edit');
+//const editRoutes = require('./routes/edit');
 app.use('/edit', editRoutes);
 
 // temporary display keys

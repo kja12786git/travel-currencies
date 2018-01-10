@@ -6,9 +6,13 @@
     <li>How many units?<br><input id="amount" type="number" placeholder="Enter Amount"></li><br>
     <li>Base Currency: <input id="from" class="currency" method="post" maxlength="3" type="text" value="USD" disabled></li><br>
     <li>Destination Currency: <input id="to" class="currency" method="post" maxlength="3" type="text" value="GBP" disabled></li>
-    <select method="POST" action="pagechange" type="dropdown">
-      <optgroup><%# include ./optionstemp %>
-        <option>◄ Select</option><option>Add New</option><option>###</option><option>###</option>
+    <select type="dropdown">
+      <optgroup>
+        <option>◄ Select</option>
+        <% currencies.forEach(currency => { %>
+          <option><%= currency.symbol %><span> <%= currency.country %></span></option>
+        <% }) %>
+
       </optgroup>
     </select><br>
     <li>Result: <input id="amount-alt" placeholder="0" disabled></li>

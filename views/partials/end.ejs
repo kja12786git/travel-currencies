@@ -77,8 +77,8 @@ sel.amount.onfocus = () => {
         } //end if check for set values
 
         let x = stored.amountres[0];
-        logs(x + " what's up with this array?")
-        results.value = (`${amount} * ${x}.${tofrom}`);
+        logs(x, " what's up with this array?")
+        results.value = eval(`${amount} * ${x}.${tofrom}`);
 
       }
 

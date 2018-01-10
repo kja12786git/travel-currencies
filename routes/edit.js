@@ -1,11 +1,14 @@
 const express = require('express');
 const path = require('path');
 const editRoute = express.Router();
-const editController = require('../controller/edit');
+const mainController = require('../controller/main');
 
-editRoute.get('/', editController.index);
-editRoute.get('/add', editController.add);
-editRoute.get('/del', editController.delete);
+editRoute.get('/', mainController.index);
+
+editRoute.get('/add', mainController.add);
+
+editRoute.get('/del', mainController.delete);
+
 editRoute.get('/*', (req, res) => {
   res.status(404).send('Nothing found here!');
 

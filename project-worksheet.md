@@ -80,7 +80,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| The Initial Experience | H | 16hrs| 6hrs | - |
+| The Initial Experience | H | 16hrs| 13hrs | - |
 | Editable Data | H | 5hrs| 4hrs | - |
 | Reworking/Polishing | H | 5hrs| - | - |
 | FE/Layout and Maps | L | 3hrs| 1hr | - |

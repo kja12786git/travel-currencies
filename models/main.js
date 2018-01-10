@@ -1,20 +1,19 @@
 const db = require('../db/config');
+const leData = {};
 
-const Edit = {};
-
-Edit.findAll = () => {
-  return db.query(`SELECT * FROM currencies ORDER by country DESC`)
+leData.findAll = () => {
+  return db.query(`SELECT * FROM currencies ORDER by country ASC`)
 
 }
 
 // Find and return a currencies item by id
-Edit.findById = (id) => {
+leData.findById = (id) => {
   return db.query(`SELECT country FROM currencies WHERE id = $1`, [id])
 
 }
 
 // INSERT/create new currency row in table data
-Edit.create = (data) => {
+leData.create = (data) => {
   return db.one(
     `
       INSERT INTO currencies
@@ -24,10 +23,11 @@ Edit.create = (data) => {
     [currencies.symbol, currencies.country, currencies.gfxcode]
 
   );
-};
+
+}
 
 // Find one id and delete from currencies table
-Edit.destroy = (id) => {
+leData.destroy = (id) => {
   return db.one(
     `
       DELETE FROM currencies
@@ -38,4 +38,4 @@ Edit.destroy = (id) => {
 
 }
 
-module.exports = Edit;
+module.exports = leData;

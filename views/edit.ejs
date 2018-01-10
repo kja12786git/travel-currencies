@@ -1,6 +1,17 @@
 <% include ./partials/header.ejs %>
 <h1>Edit Available Currency Options</h1>
-<%# include temp %>
+
+<% currencies.forEach(id => { %>
+  <div class="currencies">
+    <h4>
+      <a href="<%= `/currenciess/${currencies.id}` %>">
+        <%= currencies %>
+
+      </a>
+    </h4>
+  </div>
+
+<% }) %>
 
 <form action="<%= `/currencies/${currencies.id}?_method=PUT` %>" method="POST">
   <label for="title">Country</label>
