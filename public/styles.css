@@ -14,10 +14,20 @@ li {
   display: inline-block;
 
 }
+
 .currency {
   width: 3em;
   width: 3rem;
 }
+
+.country {
+    display: block;
+    position: fixed;
+    font-weight: bold;
+    right: 1em;
+
+}
+
 /* FOR GOOGLE MAPS */
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */

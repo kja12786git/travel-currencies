@@ -20,6 +20,14 @@ mainController.index = (req,res) => {
 
 }
 
+mainController.edit = (req,res) => {
+  res.render('edit', {
+    currencies: data
+
+  })
+
+}
+
 mainController.add = (req,res) => {
   mainModel.create({
     symbol: req.body.symbol,

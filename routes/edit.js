@@ -3,9 +3,7 @@ const path = require('path');
 const editRoute = express.Router();
 const mainController = require('../controller/main');
 
-editRoute.get('/', mainController.index);
-
-editRoute.get('/add', mainController.add);
+editRoute.get('/', mainController.add);
 
 editRoute.get('/del', mainController.delete);
 

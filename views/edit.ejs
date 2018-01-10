@@ -1,36 +1,29 @@
 <% include ./partials/header.ejs %>
-<h1>Edit Available Currency Options</h1>
+<h1>Edit Currency Options</h1>
+<h2>Add country name and matching currency...</h2>
 
-<% currencies.forEach(id => { %>
-  <div class="currencies">
-    <h4>
-      <a href="<%= `/currenciess/${currencies.id}` %>">
-        <%= currencies %>
+<% currencies.forEach(table => { %>
 
-      </a>
-    </h4>
-  </div>
-
-<% }) %>
-
-<form action="<%= `/currencies/${currencies.id}?_method=PUT` %>" method="POST">
-  <label for="title">Country</label>
-  <input id="title" type="text" name="country" value="<%= currencies.country %>" />
+<form action="<%= `/table/${table.id}?_method=PUT` %>" method="POST">
+  <label for="title"><%= table.country %></label>
+  <input id="title" type="text" name="country" value="<%= table.country %>" />
 
   <br />
 
-  <label for="symbol">Symbol</label>
-  <input id="symbol" type="text" name="sumbol" value="<%= currencies.symbol %>" />
+  <label for="symbol"><%= table.symbol %></label>
+  <input id="symbol" type="text" name="symbol" value="<%= table.symbol %>" />
 
   <br />
 
-  <label for="gfxcode">gfxcode</label>
+  <label for="gfxcode"><%= table.gfxcode %></label>
 
-  <input id="gfxcode" type="text" name="gfxcode" value="<%= currencies.gfxcode %>" />
+  <input id="gfxcode" type="text" name="gfxcode" value="<%= table.gfxcode %>" />
   <br />
 
   <input type="submit" value="Save changes" />
 </form>
+
+<% }) %>
 
 <h3><a href="../">Return to Home</a></h3>
 

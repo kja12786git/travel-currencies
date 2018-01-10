@@ -36,20 +36,20 @@ app.listen(port, () => {
 
 })
 
-// default index response
-const editRoutes = require('./routes/edit');
-app.use('/', editRoutes);
+// default index response fwds to maincontroller index
+const mainController = require('./controller/main.js')
+app.get('/', mainController.index);
 
 // fwd to Routers
 const mapsRoutes = require('./routes/maps');
-app.use('/maps', mapsRoutes);
-app.use('/map', mapsRoutes);
+app.get('/maps', mapsRoutes);
+app.get('/map', mapsRoutes);
 
 const currencyRoutes = require('./routes/currencies');
-app.use('/currencies', currencyRoutes);
+app.get('/currencies', currencyRoutes);
 
-//const editRoutes = require('./routes/edit');
-app.use('/edit', editRoutes);
+const editRoutes = require('./routes/edit');
+app.get('/edit', editRoutes);
 
 // temporary display keys
 app.get('/currencies/quotes', (req,res) => {
@@ -58,7 +58,7 @@ app.get('/currencies/quotes', (req,res) => {
 })
 
 // 404 for odd navigation
-/*app.get('*', (req,res) => {
+app.get('/*', (req,res) => {
   res.status(404).send(`Nothing located at this url.`);
 
-})*/
+})

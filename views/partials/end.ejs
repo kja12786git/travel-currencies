@@ -1,4 +1,5 @@
 <script type="text/javascript">
+
 const logs = console.log;
 // set currency calculator return
 
@@ -23,7 +24,7 @@ const sel = {
 
   tofrom: () => {
               let x = sel.from.value;
-              x = `${x}${sel.to.value}`;
+              x+= to.value;
               return x;
 
   }
@@ -35,7 +36,7 @@ const currency = () => {
   let access_key = 'f837ff23f547c798a627fc281c063f05'; //  let access_key = '19b3253e311dac1b4eb26daef9c1c988';
   let feedto = sel.amountre;
   let tofrom = sel.tofrom();
-  logs(`${tofrom} tofrom value`)
+  logs(`${tofrom} is the tofrom value`)
 
     if (stored.amountres.length < 1) { // call only once per load
           $.ajax({
@@ -44,7 +45,7 @@ const currency = () => {
               success: function(json) {
                   //log pulled data
                   logs(json.quotes);
-                  stored.amountres.push(json);
+                  stored.amountres.push(json.quotes);
 
               }
 
@@ -77,8 +78,12 @@ sel.amount.onfocus = () => {
         } //end if check for set values
 
         let x = stored.amountres[0];
-        logs(x, " what's up with this array?")
-        results.value = eval(`${amount} * ${x}.${tofrom}`);
+        logs(x, " what's up with this object?");
+
+        var topH1 = document.getElementById('anelement');
+        topH1.innerHTML = sel.to.value;
+
+        results.value = (`${amount} * ${(x.tofrom)}`);
 
       }
 
