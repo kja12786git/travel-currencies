@@ -20,7 +20,7 @@ mainController.index = (req,res) => {
 
 }
 
-mainController.edit = (req,res) =>
+mainController.edit = (req,res) => {
   console.log('inside edit method controller')
   mainModel.findAll()
       .then(data => {
@@ -36,11 +36,11 @@ mainController.edit = (req,res) =>
 
   });
 
-
 }
 
 mainController.add = (req,res) => {
-  mainModel.create({
+  console.log('at add method controller')
+    mainModel.create({
     symbol: req.body.symbol,
     country: req.body.country,
     gfxicon: req.body.gfxicon
