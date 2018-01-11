@@ -21,7 +21,7 @@ Use this section to describe your final project and perhaps any links to relevan
 ## Priority Matrix
 
 Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.
-![estimated time matrix](https://git.generalassemb.ly/kjerrya/PROJECT-2-PROMPT/blob/master/readmefiles/timeestimates.jpg)
+http://ga.co/2mka885
 
 
 ## MVP
@@ -39,7 +39,7 @@ Include the full list of features that you are considering for POST MVP
 ## Wireframes
 
 Include images of your wireframes.
-![required pages](https://git.generalassemb.ly/kjerrya/PROJECT-2-PROMPT/blob/master/readmefiles/requirepages.jpg)
+http://ga.co/2APto2v
 
 ## App Components
 
@@ -47,30 +47,30 @@ Include images of your wireframes.
 
     One page user experience...
 
-    1. Form for user input amount and pulls data on user change.
-    2. Base currency set based on api.
-    3. Destination currency selectable.
-    4. Result returns calculated amount * value of selected currency.
+    * Form for user input amount and pulls data on user change.
+    * Base currency set based on api.
+    * Destination currency selectable.
+    * Result returns calculated amount * value of selected currency.
 
     Editable Data (beyond the initial experience)
-    5. User can add destination currencies not listed to use in form.
-    6. User can remove or edit details of existing destination currency such as name of country associated with symbol.
+    * User can add destination currencies not listed to use in form.
+    * User can remove or edit details of existing destination currency such as name of country associated with symbol.
 
     Additional  
-    7. Layout design.
-    8. Google maps page using google maps api corresponds to destination currency.
+    * Layout design.
+    * Google maps page using google maps api corresponds to destination currency.
 
 ### Creating Items
-  ** A user ought to be able to add most currencies not listed on the default list. **
+  **A user ought to be able to add most currencies not listed on the default list. **
 
 ### Deleting Items
-  ** A user ought to be able to remove a currency from those available. **
+  **A user ought to be able to remove a currency from those available. **
 
 ### Editing Items
-  ** A user ought to be able to edit currency detail such as name of country or change symbol detail from those available. **
+  **A user ought to be able to edit currency detail such as name of country or change symbol detail from those available. **
 
 ### Getting Items
-  ** Selecting a currency will pull additional details from the database to enhance the DOM display. **
+  **Selecting a currency will pull additional details from the database to enhance the DOM display. **
 
 ## Functional Components
 
@@ -78,11 +78,11 @@ Based on the initial logic defined in the previous game phases section try and b
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted.
 
-| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | The Initial Experience | H | 16hrs| 13hrs | - |
 | Editable Data | H | 5hrs| 4hrs | - |
-| Reworking/Polishing | H | 5hrs| - | - |
+| Reworking/Polishing | H | 5hrs| 7hrs | - |
 | FE/Layout and Maps | L | 3hrs| 1hr | - |
 
 

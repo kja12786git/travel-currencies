@@ -19,7 +19,7 @@
     "express": "^4.16.2",
     "method-override": "^2.3.10",
     "morgan": "^1.9.0",
-    "nodemon": "^1.14.9",
+    "nodemon": "^1.14.11",
     "path": "^0.12.7",
     "pg-promise": "^7.3.3"
   }

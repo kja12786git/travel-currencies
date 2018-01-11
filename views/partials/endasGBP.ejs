@@ -9,6 +9,7 @@ const logs = console.log;
 const stored = {
   amountres: [],
   prevres: [],
+  toFromSelects: []
 
 }
 
@@ -26,7 +27,10 @@ const sel = {
               let x = sel.from.value;
               x = `${x}${sel.to.value}`;
   //              logs(`Query req is ${x}`),
-              return x;
+              stored.toFromSelects.push(x);
+              z = stored.toFromSelects;
+              return z[z.length -1];
+
   }
 
 }
@@ -85,9 +89,12 @@ sel.amount.onfocus = () => {
         logs(x, " what's up with this object?");
 
         var topH1 = document.getElementById('anelement');
-        topH1.innerHTML = sel.to.value;
+//        topH1.innerHTML = sel.to.value;
+          topH1.innerHTML = tofrom;
 
         results.value = amount * x.USDGBP;
+//        results.value = amount * x.tofrom;
+
 
       }
 

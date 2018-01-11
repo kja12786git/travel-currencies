@@ -1,14 +1,15 @@
 <script type="text/javascript">
-
 const logs = console.log;
 // set currency calculator return
 
-/* define from currency, to currency, and amount using native vanJS... but this ajax does need jQuery */
+/* define from currency, to currency, and amount
+ using native vanJS... but this ajax does need jQuery */
 
 // object with arrs to store data & results
 const stored = {
   amountres: [],
   prevres: [],
+  toFromSelects: []
 
 }
 
@@ -24,8 +25,11 @@ const sel = {
 
   tofrom: () => {
               let x = sel.from.value;
-              x+= to.value;
-              return x;
+              x = `${x}${sel.to.value}`;
+  //              logs(`Query req is ${x}`),
+              stored.toFromSelects.push(x);
+              z = stored.toFromSelects;
+              return z[z.length -1];
 
   }
 
@@ -33,10 +37,11 @@ const sel = {
 
 const currency = () => {
   let endpoint = 'convert'; // only for endpoint currencylayer api
-  let access_key = 'f837ff23f547c798a627fc281c063f05'; //  let access_key = '19b3253e311dac1b4eb26daef9c1c988';
+//  let access_key = '19b3253e311dac1b4eb26daef9c1c988';
+  let access_key = 'f837ff23f547c798a627fc281c063f05';
   let feedto = sel.amountre;
   let tofrom = sel.tofrom();
-  logs(`${tofrom} is the tofrom value`)
+  logs(`${tofrom} tofrom value`)
 
     if (stored.amountres.length < 1) { // call only once per load
           $.ajax({
@@ -46,6 +51,9 @@ const currency = () => {
                   //log pulled data
                   logs(json.quotes);
                   stored.amountres.push(json.quotes);
+
+/*                  stored.amountres.pop();
+                  stored.amountres.push(json.quotes);*/
 
               }
 
@@ -81,13 +89,20 @@ sel.amount.onfocus = () => {
         logs(x, " what's up with this object?");
 
         var topH1 = document.getElementById('anelement');
-        topH1.innerHTML = sel.to.value;
+//        topH1.innerHTML = sel.to.value;
+          topH1.innerHTML = tofrom;
 
-        results.value = (`${amount} * ${(x.tofrom)}`);
+//        results.value = amount * x.USDGBP;
+        results.value = amount * x.tofrom;
+
 
       }
 
 }
+
+
+// when currency 'to' value changes, pull this and return
+// to attach to base curr value for combined
 
 </script>
 
