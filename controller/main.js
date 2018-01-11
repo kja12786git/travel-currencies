@@ -20,11 +20,22 @@ mainController.index = (req,res) => {
 
 }
 
-mainController.edit = (req,res) => {
-  res.render('edit', {
-    currencies: data
+mainController.edit = (req,res) =>
+  console.log('inside edit method controller')
+  mainModel.findAll()
+      .then(data => {
+        console.log('this is currencies: ', data)
+        res.render('edit', {
+          currencies: data
 
+        })
   })
+  .catch(err => {
+    console.log("got an error from the edit controller")
+    res.status(400).json(err);
+
+  });
+
 
 }
 
@@ -40,6 +51,7 @@ mainController.add = (req,res) => {
 
   })
   .catch(err => {
+    console.log('Got an error in the create controller');
     res.status(500).json(err);
 
   })
