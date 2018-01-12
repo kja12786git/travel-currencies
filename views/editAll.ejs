@@ -1,0 +1,29 @@
+<% include ./partials/header.ejs %>
+<h1>Edit Currency Options</h1>
+
+<h2>Add country name and matching currency...</h2>
+<% currencies.forEach(table => { %>
+
+  <form action="<%= `/${table.id}?_method=PUT` %>" method="POST">
+  <label for="title">Change label of the country <b><%= table.country %></b></label><br>
+  <input id="title" type="text" name="country" value="<%= table.country %>">
+
+  <br>
+  <input id="symbol" type="text" name="symbol" value="<%= table.symbol %>" disabled>
+
+  <br>
+
+  <label for="gfxcode"><%= table.gfxcode %></label>
+
+  <input id="gfxcode" type="text" name="gfxcode" value="<%= table.gfxcode %>">
+  <br>
+
+  <input type="submit" value="Save changes">
+  <hr>
+</form>
+
+<% }) %>
+
+<h3><a href="../">Return to Home</a></h3>
+
+<% include ./partials/end-plain.ejs %>

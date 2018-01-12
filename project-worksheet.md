@@ -30,6 +30,12 @@ Include the full list of features that will be part of your MVP
 
   **An input form which user can insert amount of base currency then they receive a result based on the selected destination currency.**
 
+* Form for user input amount and pulls data on user change.
+* Destination currency selectable.
+* Base currency set based on api.
+* Result returns calculated amount * value of selected currency.
+
+
 ## POST MVP
 
 Include the full list of features that you are considering for POST MVP

@@ -49,7 +49,10 @@ const currencyRoutes = require('./routes/currencies');
 app.get('/currencies', currencyRoutes);
 
 const editRoutes = require('./routes/edit');
+app.get('/editAll', editRoutes);
 app.get('/edit', editRoutes);
+app.get('/:id', editRoutes);
+
 
 // temporary display keys
 app.get('/currencies/quotes', (req,res) => {

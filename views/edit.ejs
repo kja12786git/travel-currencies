@@ -1,29 +1,19 @@
 <% include ./partials/header.ejs %>
-<h1>Edit Currency Options</h1>
-<h2>Add country name and matching currency...</h2>
+<h1>Edit Currency Option</h1>
 
-<% currencies.forEach(table => { %>
 
-<form action="<%= `/table/${table.id}?_method=PUT` %>" method="POST">
-  <label for="title"><%= table.country %></label>
-  <input id="title" type="text" name="country" value="<%= table.country %>" />
+<p><%= data.country %></p>
+<input id="title" type="text" value="<%= country %>">
+<p><%= data.symbol %></p>
+<input id="symbol" type="text" value="<%= symbol %>">
+<p><%= data.gfxcode %></p>
+<input id="gfxcode" type="text" value="<%= gfxcode %>">
 
-  <br />
+  <input type="submit" value="Save changes">
 
-  <label for="symbol"><%= table.symbol %></label>
-  <input id="symbol" type="text" name="symbol" value="<%= table.symbol %>" disabled />
-
-  <br />
-
-  <label for="gfxcode"><%= table.gfxcode %></label>
-
-  <input id="gfxcode" type="text" name="gfxcode" value="<%= table.gfxcode %>" />
-  <br />
-
-  <input type="submit" value="Save changes" />
-</form>
-
-<% }) %>
+  <form action="<%= `/${id}?_method=DELETE` %>" method="POST">
+    <input type="submit" value="Delete this Item" />
+  </form>
 
 <h3><a href="../">Return to Home</a></h3>
 

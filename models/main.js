@@ -8,7 +8,7 @@ leData.findAll = () => {
 
 // Find and return a currencies item by id
 leData.findById = (id) => {
-  return db.query(`SELECT country FROM currencies WHERE id = $1`, [id])
+  return db.query(`SELECT * FROM currencies WHERE id = $1`, [id])
 
 }
 
