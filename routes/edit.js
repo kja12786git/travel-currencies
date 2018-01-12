@@ -7,10 +7,12 @@ const mainController = require('../controller/main');
 
 editRoute.get('/edit', mainController.edit);
 editRoute.get('/editAll', mainController.editAll);
-editRoute.get('/edit/add', mainController.add);
+editRoute.get('/edit/:id', mainController.edit);
+editRoute.put('/editAll', mainController.update);
+editRoute.put('/editAll/:id', mainController.update);
 editRoute.put('/edit/:id', mainController.update);
-editRoute.post('edit/add', mainController.add);
 editRoute.delete('/edit/:id', mainController.delete);
+editRoute.delete('/editAll', mainController.delete);
 
 
 editRoute.get('/*', (req, res) => {

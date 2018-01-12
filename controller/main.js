@@ -22,15 +22,16 @@ mainController.index = (req,res) => {
 
 mainController.each = (req,res) => {
   mainModel.findById(req.params.id)
-    .then(data => {
+  .then(data => {
+        console.log(`What are giving, db? ${db}`)
       res.render('show', {
-        data: data,
+        table: data
 
       })
 
     })
     .catch(err => {
-      console.log("got an error from the edit controller")
+      console.log("got an error from the each controller")
       res.status(400).json(err);
 
     });
@@ -44,6 +45,7 @@ mainController.edit = (req,res) => {
         console.log('this is currencies: ', data)
         res.render('edit', {
           data: data,
+          id: req.params.id,
           symbol: data.symbol,
           country: data.country,
           gfxcode: data.gfxcode
@@ -77,14 +79,14 @@ mainController.editAll = (req,res) => {
 }
 
 mainController.add = (req,res) => {
-  console.log('at add method controller')
+  console.log(`at add method controller, this is currencies... ${req.body}`)
     mainModel.create({
       symbol: req.body.symbol,
       country: req.body.country,
       gfxcode: req.body.gfxcode
 
     })
-    .then( data => {
+    .then( () => {
       res.redirect(`/${data.id}`);
 
     })
@@ -97,15 +99,15 @@ mainController.add = (req,res) => {
 }
 
 mainController.update = (req,res) => {
-  mainModel.update(req.params.id, {
+  mainModel.findById(req.params.id, {
     symbol: req.body.symbol,
     country: req.body.country,
     gfxcode: req.body.gfxcode
 
   } )
   .then(() => {
-    res.redirect(`/${req.params.id}`);
-
+//    res.redirect(`/${req.params.id}`);
+      res.redirect('/')
   })
   .catch(err => {
     res.status(400).json(err);
