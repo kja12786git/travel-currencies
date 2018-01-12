@@ -29,6 +29,11 @@ mainController.each = (req,res) => {
       })
 
     })
+    .catch(err => {
+      console.log("got an error from the edit controller")
+      res.status(400).json(err);
+
+    });
 
 }
 
@@ -44,12 +49,12 @@ mainController.edit = (req,res) => {
           gfxcode: data.gfxcode
 
         })
-  })
-  .catch(err => {
-    console.log("got an error from the edit controller")
-    res.status(400).json(err);
+      })
+      .catch(err => {
+        console.log("got an error from the edit controller")
+        res.status(400).json(err);
 
-  });
+      });
 
 }
 
@@ -103,7 +108,7 @@ mainController.update = (req,res) => {
 
   })
   .catch(err => {
-    res.status(500).json(err);
+    res.status(400).json(err);
 
   })
 
