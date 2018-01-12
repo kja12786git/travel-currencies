@@ -13,14 +13,14 @@ leData.findById = (id) => {
 }
 
 // INSERT/create new currency row in table data
-leData.create = (data) => {
+leData.create = data => {
   return db.one(
     `
       INSERT INTO currencies
       (symbol, country, gfxcode)
       VALUES ($1, $2, $3) RETURNING *
     `,
-    [currencies.symbol, currencies.country, currencies.gfxcode]
+    [data.symbol, data.country, data.gfxcode]
 
   );
 
