@@ -1,11 +1,11 @@
 <% include ./partials/header.ejs %>
-<h1>Edit Currency Option</h1>
+<h1>Currency Option for <%= table.symbol %></h1>
 
-<p><%= data.id %></p>
-<p><%= data.country %></p>
-<p><%= data.symbol %></p>
+<p><%= table.id %></p>
+<p><%= table.country %></p>
+<p><%= table.symbol %></p>
 
-<p><%= data.gfxcode %></p>
+<p><% table.gfxcode %></p>
 
 <h3><a href="../">Return to Home</a></h3>
 

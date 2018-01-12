@@ -1,19 +1,23 @@
 <% include ./partials/header.ejs %>
 <h1>Edit Currency Option</h1>
 
-
+<form action="<%= `edit/${data.id}?_method=PUT` %>" method="POST">
+<% data %>
 <p><%= data.country %></p>
 <input id="title" type="text" value="<%= country %>">
 <p><%= data.symbol %></p>
 <input id="symbol" type="text" value="<%= symbol %>">
 <p><%= data.gfxcode %></p>
 <input id="gfxcode" type="text" value="<%= gfxcode %>">
-
+</form>
   <input type="submit" value="Save changes">
 
-  <form action="<%= `/${data.id}?_method=DELETE` %>" method="POST">
-    <input type="submit" value="Delete this Item" />
-  </form>
+</form>
+
+
+<form action="<%= `/${data.id}?_method=DELETE` %>" method="POST">
+  <input type="submit" value="Delete from List" />
+</form>
 
 <h3><a href="../">Return to Home</a></h3>
 

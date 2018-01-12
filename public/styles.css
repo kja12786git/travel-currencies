@@ -20,6 +20,16 @@ li {
   width: 3rem;
 }
 
+#anelement:after {
+  content: 'Beta Version Bug: Despite knowing your currency selection, numbers below will currently only reflect USD to GBP...';
+  display: block;
+  top: 0;
+  color: red;
+  font-size: 12px;
+  width: 200px;
+
+}
+
 .country {
     display: block;
     position: fixed;

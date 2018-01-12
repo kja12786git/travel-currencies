@@ -1,10 +1,10 @@
 <% include ./partials/header.ejs %>
 <h1>Edit Currency Options</h1>
 
-<h2>Add country name and matching currency...</h2>
+<h3>Edit country name and matching data...</h3>
 <% currencies.forEach(table => { %>
 
-  <form action="<%= `/${table.id}?_method=PUT` %>" method="POST">
+  <form action="<%= `/editAll/${table.id}?_method=PUT` %>" method="POST">
   <label for="title">Change label of the country <b><%= table.country %></b></label><br>
   <input id="title" type="text" name="country" value="<%= table.country %>">
 
@@ -20,6 +20,10 @@
 
   <input type="submit" value="Save changes">
   <hr>
+</form>
+
+<form>
+
 </form>
 
 <% }) %>
