@@ -39,6 +39,7 @@ app.listen(port, () => {
 // default index response fwds to maincontroller index
 const mainController = require('./controller/main.js')
 app.get('/', mainController.index);
+app.get('/:id', mainController.each);
 
 // fwd to Routers
 const mapsRoutes = require('./routes/maps');
@@ -51,7 +52,6 @@ app.get('/currencies', currencyRoutes);
 const editRoutes = require('./routes/edit');
 app.get('/editAll', editRoutes);
 app.get('/edit', editRoutes);
-app.get('/:id', editRoutes);
 
 
 // temporary display keys
