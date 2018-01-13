@@ -106,7 +106,7 @@ Helper functions should be generic enought that they can be reused in other appl
 
   * **This code is great for pulling data I embedded into object via data-id on a dropdown select menu.**
 
-  * **.data('##')** seen in the below code is interesting... this is how it selects the data-id attribute. It can be **data-whateveryouwant** then you would have to change the selector accordingly.
+  * **.data('##')** seen in the below code is interesting... this is how it selects the **data-id** attribute. It can be **data-whateveryouwant** then you would have to change the selector accordingly.
 
         $(document).ready( () => {
 
