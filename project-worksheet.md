@@ -134,3 +134,17 @@ Helper functions should be generic enought that they can be reused in other appl
 #### SAMPLE.....
 **ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
 **RESOLUTION**: Missing comma after first object in sources {} object
+
+      * EST [12176] ERROR:  invalid input syntax for integer: "edit14" at character 37
+      2018-01-12 16:40:21.822 EST [12176] STATEMENT:  SELECT * FROM currencies WHERE id = 'edit14'
+      2018-01-12 16:48:20.149 EST [13528] ERROR:  syntax error at or near "RETURN" at character 96
+      2018-01-12 16:48:20.149 EST [13528] STATEMENT:
+                    INSERT INTO currencies
+                    (symbol, country, gfxcode)
+                    VALUES (null, null, null) RETURN *
+
+      No resolution yet.
+
+      * {"name":"error","length":94,"severity":"ERROR","code":"22P02","position":"37","file":"int8.c","line":"99","routine":"scanint8"}
+
+      Resolution: Don't put /:id above other directories in the app.get route orders because this is what blocks them and causes this kind of error.
