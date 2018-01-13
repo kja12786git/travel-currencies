@@ -97,7 +97,9 @@ Helper functions should be generic enought that they can be reused in other appl
 
 | Function | Description |
 | --- | :---: |  
-| Pending | I can share some code snippet here |
+| Array Cleaner | If no longer needs a multitude ofitems stored in a set array, this simple loop will clear it out and then you can use index[0] to push and pull something current. This may be good to control performance hit of large arrays, also. : |
+
+        named() => { while (arr.length > 0) } {arr.pop();};
 
 ## Additional Libraries
  jQuery may be used for some basic DOM functions.
@@ -129,7 +131,7 @@ Helper functions should be generic enought that they can be reused in other appl
  Use this section to document what changes were made and the reasoning behind those changes.
  * I changed the maps to be post MVP because the crud was more important for this assignment.
 
- * Results for the default currency can be achieved accurately. However, the user being able to select every available currency was added to post MVP because I discovered that I cannot use a created variable of two elements and/or from an array index to concatenate the key selector of the required object.
+ * Results for the default currency can be achieved accurately. However, the user being able to select every available currency was added to post MVP because I discovered that I cannot use a created variable of two elements and/or from an array index to concatenate the key selector of the required object. **Corrected this issue, selecting key via the active variable took a long while to find.**
 
  * I was initially going to add the country names somewhere visible on the DOM but I added them inside the dropdown selections instead which can be better in a way because it does leave the page cleaner. The good thing is it can still be duplicated from that element to be displayed, of course.
 

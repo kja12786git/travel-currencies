@@ -21,12 +21,12 @@ li {
 }
 
 #anelement:after {
-  content: 'Beta Version Bug: Despite knowing your currency selection, numbers below will currently only reflect USD to GBP...';
+  content: 'Beta Bug: Currencies for most countries are now available! Not all of them...';
   display: block;
   top: 0;
-  color: red;
+  color: skyblue;
   font-size: 12px;
-  width: 200px;
+  width: 300px;
 
 }
 
