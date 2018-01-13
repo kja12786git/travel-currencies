@@ -34,7 +34,7 @@
 
   x.onchange = () => {
     console.log(x.value);
-    if (x.value.length === 3) {
+    if (x.value.length === 3 && (x.value != 'USD')) {
 
       y.value = x.value;
       getDataId();
