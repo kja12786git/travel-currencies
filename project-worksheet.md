@@ -44,36 +44,35 @@ Include the full list of features that you are considering for POST MVP
 
 ## Wireframes
 
-Include images of your wireframes.
-http://ga.co/2APto2v
+* Include images of your wireframes.http://ga.co/2APto2v
 
 ## App Components
 
   As part of MVP:
 
-    One page user experience...
+One page user experience...
 
-    * Form for user input amount and pulls data on user change.
-    * Base currency set based on api.
-    * Destination currency selectable.
-    * Result returns calculated amount * value of selected currency.
+* Form for user input amount and pulls data on user change.
+* Base currency set based on api.
+* Destination currency selectable.
+* Result returns calculated amount * value of selected currency.
 
-    Editable Data (beyond the initial experience)
-    * User can add destination currencies not listed to use in form.
-    * User can remove or edit details of existing destination currency such as name of country associated with symbol.
+Editable Data (beyond the initial experience)
+* User can add destination currencies not listed to use in form.
+* User can remove or edit details of existing destination currency such as name of country associated with symbol.
 
-    Additional  
-    * Layout design.
-    * Google maps page using google maps api corresponds to destination currency.
+Additional  
+* Layout design.
+* Google maps page using google maps api corresponds to destination currency.
 
 ### Creating Items
   **A user ought to be able to add most currencies not listed on the default list. **
 
 ### Deleting Items
-  **A user ought to be able to remove a currency from those available. **
+  **A user ought to be able to remove a currency from those available.**
 
 ### Editing Items
-  **A user ought to be able to edit currency detail such as name of country or change symbol detail from those available. **
+  **A user ought to be able to edit currency detail such as name of country or change symbol detail from those available.**
 
 ### Getting Items
   **Selecting a currency will pull additional details from the database to enhance the DOM display. **
@@ -104,9 +103,9 @@ Helper functions should be generic enought that they can be reused in other appl
 
 ## Code Snippet
 
-  **This code is great for pulling data I embedded into object via data-id on a dropdown select menu.
+  **This code is great for pulling data I embedded into object via data-id on a dropdown select menu.**
 
-  **.data('##') seen in the below code is interesting... this is how it selects the data-id attribute. It can be data-whateveryouwant then you would have to change the selector accordingly.
+  **.data('##') seen in the below code is interesting... this is how it selects the data-id attribute. It can be data-whateveryouwant then you would have to change the selector accordingly.**
 
       $(document).ready( () => {
 
@@ -126,7 +125,9 @@ Helper functions should be generic enought that they can be reused in other appl
 
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.  
+ Use this section to document what changes were made and the reasoning behind those changes.
+ * I changed the maps to be post MVP because the crud was more important for this assignment.
+ * I was initially going to add the country names somewhere visible on the DOM but I added them inside the dropdown selections instead which can actually be better in a way. The good thing is it can still be duplicated from that element to be displayed, of course.  
 
 ## Issues and Resolutions
  Use this section to list of all major issues encountered and their resolution.
