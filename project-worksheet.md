@@ -87,7 +87,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | The Initial Experience | H | 16hrs| 13hrs | - |
-| Editable Data | H | 5hrs| 4hrs | - |
+| Editable Data | H | 5hrs| 16hrs | - |
 | Reworking/Polishing | H | 5hrs| 7hrs | - |
 | FE/Layout and Maps | L | 3hrs| 1hr | - |
 
@@ -104,10 +104,26 @@ Helper functions should be generic enought that they can be reused in other appl
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  
+  **This code is great for pulling data I embedded into object via data-id on a dropdown select menu.
+
+  **.data('##') seen in the below code is interesting... this is how it selects the data-id attribute. It can be data-whateveryouwant then you would have to change the selector accordingly.
+
+      $(document).ready( () => {
+
+        getDataId = () => {
+          var data = $('#idofelement').find(':selected').data('id'); //##
+
+          return data;
+
+        }
+
+      })
 
 ## jQuery Discoveries
  Use this section to list some, but not all, of the jQuery methods and\or functionality discovered while working on this project.
+
+ * selected items from dropdown menus are readable as a :pseudoclass
+
 
 ## Change Log
  Use this section to document what changes were made and the reasoning behind those changes.  
