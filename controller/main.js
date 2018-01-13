@@ -86,7 +86,7 @@ mainController.add = (req,res) => {
       gfxcode: req.body.gfxcode
 
     })
-    .then( () => {
+    .then( data => {
       res.redirect(`/${data.id}`);
 
     })
