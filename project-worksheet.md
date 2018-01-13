@@ -108,16 +108,16 @@ Helper functions should be generic enought that they can be reused in other appl
 
   * **.data('##')** seen in the below code is interesting... this is how it selects the data-id attribute. It can be **data-whateveryouwant** then you would have to change the selector accordingly.
 
-      $(document).ready( () => {
+        $(document).ready( () => {
 
-        getDataId = () => {
-          var data = $('#idofelement').find(':selected').**data('id')**; //##
+          getDataId = () => {
+            var data = $('#idofelement').find(':selected').data('id'); //**##**
 
-          return data;
+            return data;
 
-        }
+          }
 
-      })
+        })
 
 ## jQuery Discoveries
  Use this section to list some, but not all, of the jQuery methods and\or functionality discovered while working on this project.
