@@ -128,7 +128,10 @@ Helper functions should be generic enought that they can be reused in other appl
 ## Change Log
  Use this section to document what changes were made and the reasoning behind those changes.
  * I changed the maps to be post MVP because the crud was more important for this assignment.
- * I was initially going to add the country names somewhere visible on the DOM but I added them inside the dropdown selections instead which can actually be better in a way. The good thing is it can still be duplicated from that element to be displayed, of course.  
+
+ * Results for the default currency can be achieved accurately. However, the user being able to select every available currency was added to post MVP because I discovered that I cannot use a created variable of two elements and/or from an array index to concatenate the key selector of the required object.
+
+ * I was initially going to add the country names somewhere visible on the DOM but I added them inside the dropdown selections instead which can be better in a way because it does leave the page cleaner. The good thing is it can still be duplicated from that element to be displayed, of course.
 
 ## Issues and Resolutions
  Use this section to list of all major issues encountered and their resolution.
