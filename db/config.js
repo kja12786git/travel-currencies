@@ -5,6 +5,7 @@ const options = {
   query: (e) => {
     console.log("this is e.query:", e.query)
   }
+
 };
 
 const pgp = require('pg-promise')(options);

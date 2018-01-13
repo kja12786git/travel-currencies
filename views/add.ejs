@@ -1,0 +1,16 @@
+<% include ./partials/header.ejs %>
+
+<h1>Add New Data</h1>
+
+<form action="/add" method="POST">
+  <p>Country</p>
+  <input id="country" type="text" placeholder="Enter Country">
+  <p>Symbol</p>
+  <input id="symbol" type="text" placeholder="Enter Symbol">
+  <p>Graphic Symbol</p>
+  <input id="gfxcode" type="text" placeholder="Enter graphic symbol ie. $">
+  <br>
+  <input type="submit" value="Add New Data" />
+</form>
+
+<a href="../">Cancel</a>

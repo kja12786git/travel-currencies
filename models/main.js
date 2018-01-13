@@ -8,19 +8,19 @@ leData.findAll = () => {
 
 // Find and return a currencies item by id
 leData.findById = (id) => {
-  return db.query(`SELECT country FROM currencies WHERE id = $1`, [id])
+  return db.query(`SELECT * FROM currencies WHERE id = $1`, [id])
 
 }
 
 // INSERT/create new currency row in table data
-leData.create = (data) => {
+leData.create = data => {
   return db.one(
     `
       INSERT INTO currencies
       (symbol, country, gfxcode)
       VALUES ($1, $2, $3) RETURNING *
     `,
-    [currencies.symbol, currencies.country, currencies.gfxcode]
+    [data.symbol, data.country, data.gfxcode]
 
   );
 

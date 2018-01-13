@@ -5,7 +5,7 @@
   <ul><!-- worry about a inverse in an upgrade instead -->
     <li>How many units?<br><input id="amount" type="number" placeholder="Enter Amount"></li><br>
     <li>Base Currency: <input id="from" class="currency" method="post" maxlength="3" type="text" value="USD" disabled></li><br>
-    <li>Destination Currency: <input id="to" class="currency" method="post" maxlength="3" type="text" value="GBP" disabled></li>
+    <li>Destination Currency: <span id="glyph">$</span><input id="to" class="currency" method="post" maxlength="3" type="text" value="GBP" disabled></li>
     <select id="currencies-dd" type="dropdown">
       <optgroup>
         <option>◄ Pick another</option>
@@ -21,6 +21,9 @@
 
   </ul>
 </form>
+
+<form method="get" action="/editAll"><button style="width: auto; height: 21px;">Edit Destination Currency Options</button></form>
+<form method="get" action="/add"><button style="width: auto; height: 21px;">Add Destination Currencies</button></form>
 <h3><a href="/maps">Check out a map for your selected currency...</a></h3>
 
 <script>
@@ -28,11 +31,31 @@
   // pull dropdown onchanges to change dest. symbol value
   let x = document.getElementById('currencies-dd');
   let y = document.getElementById('to');
+
   x.onchange = () => {
     console.log(x.value);
-    y.value = x.value;
+    if (x.value.length === 3 && (x.value != 'USD')) {
+
+      y.value = x.value;
+      getDataId();
+
+      document.getElementById('glyph').innerHTML = getDataId();
+
+    }
 
   }
+
+  $(document).ready( () => {
+
+    getDataId = () => {
+      var gotData = $('#currencies-dd').find(':selected').data('id');
+      console.log(gotData + $('#glyph').val());
+
+      return gotData;
+
+    }
+
+  })
 
 </script>
 
