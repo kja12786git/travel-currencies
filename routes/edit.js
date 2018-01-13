@@ -6,7 +6,7 @@ const mainController = require('../controller/main');
 
 editRoute.get('/:id/edit', mainController.edit);
 editRoute.put('/:id/edit', mainController.update);
-editRoute.post('/:id', mainController.delete);
+editRoute.delete('/:id', mainController.delete);
 
 editRoute.get('/*', (req, res) => {
   res.status(404).send('Nothing found here!');

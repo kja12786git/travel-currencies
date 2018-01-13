@@ -114,13 +114,13 @@ mainController.update = (req,res) => {
 }
 
 mainController.delete = (req,res) => {
-  MainModel.destroy(req.params.id)
+  mainModel.destroy(req.params.id)
   .then(() => {
     res.redirect(`/editAll`);
 
   })
   .catch(err => {
-    res.status(500).json(err);
+    res.status(400).json(err);
 
   })
 
