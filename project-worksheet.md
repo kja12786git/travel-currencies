@@ -31,16 +31,17 @@ Include the full list of features that will be part of your MVP
   **An input form which user can insert amount of base currency then they receive a result based on the selected destination currency.**
 
 * Form for user input amount and pulls data on user change.
-* Destination currency selectable.
+* Destination currencies selectable and labeled with relative data such as country.
 * Base currency set based on api.
-* Result returns calculated amount * value of selected currency.
-
+* Results return calculated amount * value at least for one major currency.
 
 ## POST MVP
 
 Include the full list of features that you are considering for POST MVP
 
-  **A map using google maps api which corresponds to the destination currency.**
+  * A map using google maps api which corresponds to the destination currency.
+
+  * Result returns calculated amount * value at least for all currencies listed or added to be available.
 
 ## Wireframes
 
@@ -66,16 +67,16 @@ Additional
 * Google maps page using google maps api corresponds to destination currency.
 
 ### Creating Items
-  **A user ought to be able to add most currencies not listed on the default list. **
+  * A user ought to be able to add most currencies not listed on the default list.
 
 ### Deleting Items
-  **A user ought to be able to remove a currency from those available.**
+  * A user ought to be able to remove a currency from those available.
 
 ### Editing Items
-  **A user ought to be able to edit currency detail such as name of country or change symbol detail from those available.**
+  * A user ought to be able to edit currency detail such as name of country or change symbol detail from those available.
 
 ### Getting Items
-  **Selecting a currency will pull additional details from the database to enhance the DOM display. **
+  * Selecting a currency will pull additional details from the database to enhance the DOM display.
 
 ## Functional Components
 
@@ -88,7 +89,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | The Initial Experience | H | 16hrs| 13hrs | - |
 | Editable Data | H | 5hrs| 16hrs | - |
 | Reworking/Polishing | H | 5hrs| 7hrs | - |
-| FE/Layout and Maps | L | 3hrs| 1hr | - |
+| FE/Layout and Maps | L | 3hrs| 2hr | - |
 
 
 ## Helper Functions
@@ -103,14 +104,14 @@ Helper functions should be generic enought that they can be reused in other appl
 
 ## Code Snippet
 
-  **This code is great for pulling data I embedded into object via data-id on a dropdown select menu.**
+  * **This code is great for pulling data I embedded into object via data-id on a dropdown select menu.**
 
-  **.data('##') seen in the below code is interesting... this is how it selects the data-id attribute. It can be data-whateveryouwant then you would have to change the selector accordingly.**
+  * **.data('##')** seen in the below code is interesting... this is how it selects the data-id attribute. It can be **data-whateveryouwant** then you would have to change the selector accordingly.
 
       $(document).ready( () => {
 
         getDataId = () => {
-          var data = $('#idofelement').find(':selected').data('id'); //##
+          var data = $('#idofelement').find(':selected').**data('id')**; //##
 
           return data;
 
@@ -121,7 +122,7 @@ Helper functions should be generic enought that they can be reused in other appl
 ## jQuery Discoveries
  Use this section to list some, but not all, of the jQuery methods and\or functionality discovered while working on this project.
 
- * selected items from dropdown menus are readable as a :pseudoclass
+ * selected items from dropdown menus are readable as a :pseudoclass as in my code snippet above.
 
 
 ## Change Log
@@ -144,8 +145,8 @@ Helper functions should be generic enought that they can be reused in other appl
                     (symbol, country, gfxcode)
                     VALUES (null, null, null) RETURN *
 
-      No resolution yet.
+      **No resolution yet. I am having issues with the database returns and puts for some templates. My forms on some templates are sending null values into the db tables.**
 
       * {"name":"error","length":94,"severity":"ERROR","code":"22P02","position":"37","file":"int8.c","line":"99","routine":"scanint8"}
 
-      Resolution: Don't put /:id above other directories in the app.get route orders because this is what blocks them and causes this kind of error.
+      **Resolution: Don't put /:id above other directories in the app.get route orders because this is what blocks them and causes this kind of error.**
