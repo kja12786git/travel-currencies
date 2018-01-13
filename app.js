@@ -58,7 +58,7 @@ app.get('/add', (req, res) => {
 
 })
 app.get('/edit/:id', editRoutes);
-app.get('/:id', mainController.each); // routes are a cascading effect, must position /:id below other routes in dir
+app.get('/:id', mainController.each); // routes are a cascading effect, must position /:id below other get routes
 app.post('/add', mainController.add);
 app.post('delete', mainController.delete);
 
