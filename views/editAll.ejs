@@ -4,7 +4,7 @@
 <h3>Edit country name and matching data...</h3>
 <% currencies.forEach(table => { %>
 
-  <form action="<%= `/editAll/${table.id}?_method=PUT` %>" method="POST">
+  <form action="<%= `/${table.id}?_method=PUT` %>" method="POST">
   <label for="title">Change label of the country <b><%= table.country %></b></label><br>
   <input id="title" type="text" name="country" value="<%= table.country %>">
 

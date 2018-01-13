@@ -14,7 +14,7 @@ leData.findById = (id) => {
 
 // INSERT/create new currency row in table data
 leData.create = currencies => {
-  return db.oneOrNone (
+  return db.one (
     `
       INSERT INTO currencies
       (symbol, country, gfxcode)
@@ -26,7 +26,7 @@ leData.create = currencies => {
 
 }
 
-leData.update = (movie, id) => {
+leData.update = (symbol, country, gfxcode, id) => {
   return db.none(
   `
     UPDATE currencies SET

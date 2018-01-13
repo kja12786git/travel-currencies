@@ -84,7 +84,7 @@ mainController.new = (req,res) => {
 
     })
     .then( data => {
-      res.redirect(`/edit/${data.id}`);
+      res.redirect(`/${data.id}`);
 
     })
     .catch(err => {
