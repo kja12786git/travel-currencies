@@ -57,10 +57,10 @@ app.get('/add', (req, res) => {
   res.render('add')
 
 })
-app.post('/add', mainController.add);
-app.post('delete', mainController.delete);
 app.get('/edit/:id', editRoutes);
 app.get('/:id', mainController.each); // routes are a cascading effect, must position /:id below other routes in dir
+app.post('/add', mainController.add);
+app.post('delete', mainController.delete);
 
 // static quotes data display keys - unpulled
 app.get('/currencies/quotes', (req,res) => {
