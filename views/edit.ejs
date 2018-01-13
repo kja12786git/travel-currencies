@@ -1,14 +1,13 @@
 <% include ./partials/header.ejs %>
 <h1>Edit Currency Option</h1>
 
-<form action="<%= `edit/${data.id}?_method=PUT` %>" method="POST">
-<% data %>
-<p><%= data.country %></p>
-<input id="title" type="text" value="<%= country %>">
-<p><%= data.symbol %></p>
-<input id="symbol" type="text" value="<%= symbol %>">
-<p><%= data.gfxcode %></p>
-<input id="gfxcode" type="text" value="<%= gfxcode %>">
+<form action="<%= `/edit/${currencies.id}?_method=PUT` %>" method="POST">
+<p><%= currencies.country %></p>
+<input id="title" type="text" value="<%= currencies.country %>">
+<p><%= currencies.symbol %></p>
+<input id="symbol" type="text" value="<%= currencies.symbol %>">
+<p><%= currencies.gfxcode %></p>
+<input id="gfxcode" type="text" value="<%= currencies.gfxcode %>">
 </form>
   <input type="submit" value="Save changes">
 

@@ -1,12 +1,12 @@
 <% include ./partials/header.ejs %>
-<h1>Currency Option for <%= table.symbol %></h1>
+<h1>Currency Option for <%= currencies.symbol %></h1>
 
-<p><%= table.id %></p>
-<p><%= table.country %></p>
-<p><%= table.symbol %></p>
+<h2><%= currencies.country %> </h2>
+<p><%= currencies.symbol %></p>
+<p><%= currencies.gfxcode %></p>
 
-<p><% table.gfxcode %></p>
-
+<h3><a href="<%= `/edit/${currencies.id}` %>">Edit Details</a></h3>
 <h3><a href="../">Return to Home</a></h3>
+
 
 <% include ./partials/end-plain.ejs %>

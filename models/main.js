@@ -8,21 +8,37 @@ leData.findAll = () => {
 
 // Find and return a currencies item by id
 leData.findById = (id) => {
-  return db.query(`SELECT * FROM currencies WHERE id = $1`, [id])
+  return db.oneOrNone(`SELECT * FROM currencies WHERE id = $1`, [id])
 
 }
 
 // INSERT/create new currency row in table data
-leData.create = data => {
-  return db.one(
+leData.create = currencies => {
+  return db.oneOrNone (
     `
       INSERT INTO currencies
       (symbol, country, gfxcode)
       VALUES ($1, $2, $3) RETURNING *
     `,
-    [data.symbol, data.country, data.gfxcode]
+    [currencies.symbol, currencies.country, currencies.gfxcode]
 
   );
+
+}
+
+leData.update = (movie, id) => {
+  return db.none(
+  `
+    UPDATE currencies SET
+    symbol = $1,
+    country = $2,
+    gfxcode = $3
+    WHERE id = $4
+
+  `,
+  [currencies.symbol, currencies.country, currencies.gfxcode, [id]]
+
+  )
 
 }
 
