@@ -23,9 +23,9 @@ mainController.index = (req,res) => {
 mainController.each = (req,res) => {
   mainModel.findById(req.params.id)
   .then(data => {
-        console.log(`What are giving, db? ${db}`)
+        console.log(`What are giving, db? ${data}`)
       res.render('show', {
-        table: data
+        currencies: data
 
       })
 
@@ -42,13 +42,10 @@ mainController.edit = (req,res) => {
   console.log('inside edit method controller')
   mainModel.findById(req.params.id)
       .then(data => {
-        console.log('this is currencies: ', data)
+        console.log(`this is currencies: ${data}`),
         res.render('edit', {
-          data: data,
-          id: req.params.id,
-          symbol: data.symbol,
-          country: data.country,
-          gfxcode: data.gfxcode
+          currencies: data,
+
 
         })
       })
@@ -58,7 +55,7 @@ mainController.edit = (req,res) => {
 
       });
 
-}
+};
 
 mainController.editAll = (req,res) => {
   console.log('inside edit method controller')
@@ -76,10 +73,10 @@ mainController.editAll = (req,res) => {
 
     });
 
-}
+};
 
-mainController.add = (req,res) => {
-  console.log(`at add method controller, this is currencies... ${req.body}`)
+mainController.new = (req,res) => {
+  console.log(`at add method controller`)
     mainModel.create({
       symbol: req.body.symbol,
       country: req.body.country,
@@ -94,39 +91,39 @@ mainController.add = (req,res) => {
       console.log('Got an error in the create controller');
       res.status(400).json(err);
 
-    })
+    });
 
-}
+};
 
 mainController.update = (req,res) => {
-  mainModel.findById(req.params.id, {
+  mainModel.update({
     symbol: req.body.symbol,
     country: req.body.country,
     gfxcode: req.body.gfxcode
 
-  } )
+  }, req.params.id)
   .then(() => {
-//    res.redirect(`/${req.params.id}`);
-      res.redirect('/')
+      res.redirect(`/${req.params.id}/edit`)
+
   })
   .catch(err => {
     res.status(400).json(err);
 
-  })
+  });
 
-}
+};
 
 mainController.delete = (req,res) => {
-  MainModel.delete(req.params.id)
+  mainModel.destroy(req.params.id)
   .then(() => {
-    res.redirect(`/`);
+    res.redirect(`/editAll`);
 
   })
   .catch(err => {
-    res.status(500).json(err);
+    res.status(400).json(err);
 
-  })
+  });
 
-}
+};
 
 module.exports = mainController;

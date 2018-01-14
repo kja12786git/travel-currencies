@@ -18,7 +18,7 @@ function setDatabase() {
            host: 'localhost',
 
         });
-    } else if (process.eng.NODE_ENV === 'production') {
+    } else if (process.env.NODE_ENV === 'production') {
         return pgp(process.env.DATABASE_URL);
 
     }

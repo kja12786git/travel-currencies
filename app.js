@@ -51,18 +51,23 @@ const currencyRoutes = require('./routes/currencies');
 app.get('/currencies', currencyRoutes);
 
 const editRoutes = require('./routes/edit');
-app.get('/editAll', editRoutes);
-app.get('/edit', editRoutes);
-app.get('/add', (req, res) => {
-  res.render('add')
+app.get('/editAll', mainController.editAll);
+app.get('/new', (req, res) => {
+  res.render('new')
 
 })
-app.get('/edit/:id', editRoutes);
-app.get('/:id', mainController.each); // routes are a cascading effect, must position /:id below other get routes
-app.post('/add', mainController.add);
-app.post('delete', mainController.delete);
+app.get('/:id/edit', editRoutes);
+app.put('/:id/edit', editRoutes);
+app.get('/:id', mainController.each); // routes are a cascading effect, must position /:id below other routes
+app.put('/editAll', mainController.update);
+app.post('/new', mainController.new);
 
-// static quotes data display keys - unpulled
+app.delete('/editAll', mainController.delete);
+app.delete('/:id', mainController.delete);
+
+
+
+// static quotes data display keys - untilized
 app.get('/currencies/quotes', (req,res) => {
   res.json(currencies[0].quotes);
 

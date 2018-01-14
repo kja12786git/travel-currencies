@@ -1,7 +1,7 @@
 \c icons
 
 INSERT INTO currencies (symbol, country, gfxcode) VALUES
-  ('YEN', 'Japan', '¥'),
+  ('JPY', 'Japan', '¥'),
   ('AUD', 'Australia', '$'),
   ('CAD', 'Canada', '$'),
   ('USD', 'United States', '$'),

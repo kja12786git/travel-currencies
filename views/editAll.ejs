@@ -4,12 +4,12 @@
 <h3>Edit country name and matching data...</h3>
 <% currencies.forEach(table => { %>
 
-  <form action="<%= `/editAll/${table.id}?_method=PUT` %>" method="POST">
+  <form action="<%= `/${table.id}/edit?_method=PUT` %>" method="POST">
   <label for="title">Change label of the country <b><%= table.country %></b></label><br>
   <input id="title" type="text" name="country" value="<%= table.country %>">
 
   <br>
-  <input id="symbol" type="text" name="symbol" value="<%= table.symbol %>" disabled>
+  <input id="symbol" type="text" name="symbol" value="<%= table.symbol %>">
 
   <br>
 
@@ -19,13 +19,14 @@
   <br>
 
   <input type="submit" value="Save changes">
+
+</form>
+
+<form action="<%= `${table.id}?_method=DELETE` %>" method="POST">
+  <input type="submit" value="Delete from List" />
+</form>
+
   <hr>
-</form>
-
-<form>
-
-</form>
-
 <% }) %>
 
 <h3><a href="../">Return to Home</a></h3>
