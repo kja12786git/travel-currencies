@@ -26,21 +26,20 @@ leData.create = currencies => {
 
 }
 
-leData.update = (symbol, country, gfxcode, id) => {
-  return db.none(
-  `
-    UPDATE currencies SET
-    symbol = $1,
-    country = $2,
-    gfxcode = $3
-    WHERE id = $4
+leData.update = (currencies, id) => {
+    return db.none(
+    `
+      UPDATE currencies SET
+      symbol = $1,
+      country = $2,
+      gfxcode = $3
+      WHERE id = $4
+    `,
+    [currencies.symbol, currencies.country, currencies.gfxcode, id]
 
-  `,
-  [currencies.symbol, currencies.country, currencies.gfxcode, [id]]
+  );
 
-  )
-
-}
+};
 
 // Find one id and delete from currencies table
 leData.destroy = (id) => {
@@ -50,8 +49,9 @@ leData.destroy = (id) => {
       WHERE id = $1
     `,
     [id]
+
   );
 
-}
+};
 
 module.exports = leData;

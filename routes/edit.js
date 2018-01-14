@@ -5,7 +5,6 @@ const mainController = require('../controller/main');
 // to confirm... routes only needs to know where the controller is and handle paths
 
 editRoute.get('/:id/edit', mainController.edit);
-editRoute.put('/:id/edit', mainController.update);
 editRoute.delete('/:id', mainController.delete);
 
 editRoute.get('/*', (req, res) => {

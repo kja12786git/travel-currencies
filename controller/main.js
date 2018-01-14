@@ -45,7 +45,7 @@ mainController.edit = (req,res) => {
         console.log(`this is currencies: ${data}`),
         res.render('edit', {
           currencies: data,
-  //        id: currencies.id
+
 
         })
       })
@@ -55,7 +55,7 @@ mainController.edit = (req,res) => {
 
       });
 
-}
+};
 
 mainController.editAll = (req,res) => {
   console.log('inside edit method controller')
@@ -73,7 +73,7 @@ mainController.editAll = (req,res) => {
 
     });
 
-}
+};
 
 mainController.new = (req,res) => {
   console.log(`at add method controller`)
@@ -91,9 +91,9 @@ mainController.new = (req,res) => {
       console.log('Got an error in the create controller');
       res.status(400).json(err);
 
-    })
+    });
 
-}
+};
 
 mainController.update = (req,res) => {
   mainModel.update({
@@ -103,15 +103,15 @@ mainController.update = (req,res) => {
 
   }, req.params.id)
   .then(() => {
-//    res.redirect(`/${req.params.id}`);
-      res.redirect(`/${req.params.id}`)
+      res.redirect(`/${req.params.id}/edit`)
+
   })
   .catch(err => {
     res.status(400).json(err);
 
-  })
+  });
 
-}
+};
 
 mainController.delete = (req,res) => {
   mainModel.destroy(req.params.id)
@@ -122,8 +122,8 @@ mainController.delete = (req,res) => {
   .catch(err => {
     res.status(400).json(err);
 
-  })
+  });
 
-}
+};
 
 module.exports = mainController;
