@@ -56,14 +56,14 @@ app.get('/new', (req, res) => {
   res.render('new')
 
 })
-app.get('/:id/edit', editRoutes); // routes are a cascading effect, must position /:id below other routes
-app.put('/:id/edit', mainController.update);
+app.get('/:id/edit', editRoutes);
+app.put('/:id/edit', editRoutes);
 app.get('/:id', mainController.each); // routes are a cascading effect, must position /:id below other routes
 app.put('/editAll', mainController.update);
 app.post('/new', mainController.new);
+
 app.delete('/editAll', mainController.delete);
 app.delete('/:id', mainController.delete);
-app.delete('/:id/edit', mainController.delete);
 
 
 
