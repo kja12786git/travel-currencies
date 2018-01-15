@@ -17,10 +17,10 @@ leData.create = data => {
   return db.one (
     `
       INSERT INTO currencies
-      (symbol, country, gfxcode)
-      VALUES ($1, $2, $3) RETURNING *
+      (symbol, country, gfxcode, ccode)
+      VALUES ($1, $2, $3, $4) RETURNING *
     `,
-    [data.symbol, data.country, data.gfxcode]
+    [data.symbol, data.country, data.gfxcode, data.ccode]
 
   );
 
@@ -32,10 +32,12 @@ leData.update = (currencies, id) => {
       UPDATE currencies SET
       symbol = $1,
       country = $2,
-      gfxcode = $3
-      WHERE id = $4
+      gfxcode = $3,
+      ccode = $4,
+      WHERE id = $5,
+      
     `,
-    [currencies.symbol, currencies.country, currencies.gfxcode, id]
+    [currencies.symbol, currencies.country, currencies.gfxcode, currencies.ccode, id]
 
   );
 

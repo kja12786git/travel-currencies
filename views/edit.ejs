@@ -2,12 +2,13 @@
 <h1>Edit Currency Option</h1>
 
 <form action="<%= `/${currencies.id}/edit?_method=PUT` %>" method="POST">
-<p><%= currencies.country %></p>
 <input id="title" type="text" value="<%= currencies.country %>">
-<p><%= currencies.symbol %></p>
+<p>Currency Symbol: </p>
 <input id="symbol" type="text" value="<%= currencies.symbol %>">
-<p><%= currencies.gfxcode %></p>
+<p>Glyph: </p>
 <input id="gfxcode" type="text" value="<%= currencies.gfxcode %>">
+<p>Country Code: </p>
+<input id="ccode" type="text" value="<%= currencies.ccode %>">
 <br><br>
   <input type="submit" value="Save changes">
 </form>

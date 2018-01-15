@@ -1,10 +1,10 @@
 \c icons
 
-INSERT INTO currencies (symbol, country, gfxcode) VALUES
-  ('JPY', 'Japan', '¥'),
-  ('AUD', 'Australia', '$'),
-  ('CAD', 'Canada', '$'),
-  ('USD', 'United States', '$'),
-  ('EUR', 'Spain', '€'),
-  ('EUR', 'France', '€'),
-  ('GBP', 'United Kingdom', '£')
+INSERT INTO currencies (symbol, country, gfxcode, ccode) VALUES
+  ('JPY', 'Japan', '¥', 'JPN'),
+  ('AUD', 'Australia', '$', 'AUS'),
+  ('CAD', 'Canada', '$', 'CAN'),
+  ('USD', 'United States', '$', 'USA'),
+  ('EUR', 'Spain', '€', 'ESP'),
+  ('EUR', 'France', '€', 'FRA'),
+  ('GBP', 'United Kingdom', '£', 'GBR')

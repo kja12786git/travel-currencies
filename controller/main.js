@@ -95,7 +95,8 @@ mainController.update = (req,res) => {
   mainModel.update({
     symbol: req.body.symbol,
     country: req.body.country,
-    gfxcode: req.body.gfxcode
+    gfxcode: req.body.gfxcode,
+    ccode: req.body.ccode
 
   }, req.params.id)
   .then(() => {

@@ -66,8 +66,6 @@ app.get('/:id', mainController.each); // routes are a cascading effect, must pos
 
 app.delete('/:id', mainController.delete);
 
-
-
 // static quotes data display keys - untilized
 app.get('/currencies/quotes', (req,res) => {
   res.json(currencies[0].quotes);
