@@ -5,7 +5,7 @@
 <% currencies.forEach(table => { %>
 
   <form action="<%= `/${table.id}/edit?_method=PUT` %>" method="POST">
-  <label for="title">Change label of the country <b><%= table.country %></b></label><br>
+  <label for="title">Change information for <b><%= table.country %></b></label><br>
   <input id="title" type="text" name="country" value="<%= table.country %>">
 
   <br>
