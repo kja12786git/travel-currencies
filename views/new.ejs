@@ -3,12 +3,14 @@
 <h1>Add New Data</h1>
 
 <form action="/new" method="POST">
-  <p>Country</p>
-  <input id="country" type="text" placeholder="Enter Country">
-  <p>Symbol</p>
-  <input id="symbol" type="text" placeholder="Enter Symbol">
-  <p>Graphic Symbol</p>
-  <input id="gfxcode" type="text" placeholder="Enter graphic symbol ie. $">
+  <p>Country Name</p>
+  <input id="country" name="country" type="text" placeholder="Enter Country">
+  <p>Currency Symbol</p>
+  <input id="symbol" name="symbol"  type="text" placeholder="Enter Symbol ie. USD">
+  <p>Glph</p>
+  <input id="gfxcode" name="gfxcode"  type="text" placeholder="Enter graphic symbol ie. $">
+  <p>Country Code</p>
+  <input id="ccode" name="ccode" type="text" placeholder="ie. USA">
   <br>
   <input type="submit" value="Add New Data" />
 </form>

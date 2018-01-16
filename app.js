@@ -21,9 +21,10 @@ const app = express();
 // set app to use dependencies
 app.use(express.static('public'));
 app.use(logger('dev'));
+app.use(methodOverride('_method'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(methodOverride('_method'));
+
 
 // for securing data on the server-side
 require('dotenv').config();
@@ -41,6 +42,7 @@ app.listen(port, () => {
 
 // default index response fwds to maincontroller index
 app.get('/', mainController.index);
+app.post('/new', mainController.create);
 
 // fwd to Routers
 const mapsRoutes = require('./routes/maps');
@@ -50,22 +52,19 @@ app.get('/map', mapsRoutes);
 const currencyRoutes = require('./routes/currencies');
 app.get('/currencies', currencyRoutes);
 
-const editRoutes = require('./routes/edit');
-app.get('/editAll', mainController.editAll);
 app.get('/new', (req, res) => {
   res.render('new')
 
 })
+
+const editRoutes = require('./routes/edit');
+app.get('/editAll', mainController.editAll);
+
 app.get('/:id/edit', editRoutes);
-app.put('/:id/edit', editRoutes);
+app.put('/:id/edit', mainController.update);
 app.get('/:id', mainController.each); // routes are a cascading effect, must position /:id below other routes
-app.put('/editAll', mainController.update);
-app.post('/new', mainController.new);
 
-app.delete('/editAll', mainController.delete);
 app.delete('/:id', mainController.delete);
-
-
 
 // static quotes data display keys - untilized
 app.get('/currencies/quotes', (req,res) => {

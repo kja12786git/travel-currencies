@@ -23,7 +23,7 @@ mainController.index = (req,res) => {
 mainController.each = (req,res) => {
   mainModel.findById(req.params.id)
   .then(data => {
-        console.log(`What are giving, db? ${data}`)
+        console.log(`What are giving, db? In each... ${data}`)
       res.render('show', {
         currencies: data
 
@@ -42,12 +42,8 @@ mainController.edit = (req,res) => {
   console.log('inside edit method controller')
   mainModel.findById(req.params.id)
       .then(data => {
-        console.log(`this is currencies: ${data}`),
-        res.render('edit', {
-          currencies: data,
-
-
-        })
+        console.log(`this is currencies: ${JSON.stringify(data)}`),
+        res.render('edit', {currencies: data})
       })
       .catch(err => {
         console.log("got an error from the edit controller")
@@ -61,7 +57,7 @@ mainController.editAll = (req,res) => {
   console.log('inside edit method controller')
   mainModel.findAll()
     .then(data => {
-      console.log('this is currencies: ', data)
+      console.log(`this is currencies: ${JSON.stringify(data)}`),
       res.render('editAll', {
         currencies: data,
 
@@ -75,9 +71,9 @@ mainController.editAll = (req,res) => {
 
 };
 
-mainController.new = (req,res) => {
+mainController.create = (req,res) => {
   console.log(`at add method controller`)
-    mainModel.create({
+    mainModel.create( {
       symbol: req.body.symbol,
       country: req.body.country,
       gfxcode: req.body.gfxcode
@@ -99,11 +95,12 @@ mainController.update = (req,res) => {
   mainModel.update({
     symbol: req.body.symbol,
     country: req.body.country,
-    gfxcode: req.body.gfxcode
+    gfxcode: req.body.gfxcode,
+    ccode: req.body.ccode
 
   }, req.params.id)
   .then(() => {
-      res.redirect(`/${req.params.id}/edit`)
+      res.redirect(`/${req.params.id}`)
 
   })
   .catch(err => {
@@ -116,7 +113,7 @@ mainController.update = (req,res) => {
 mainController.delete = (req,res) => {
   mainModel.destroy(req.params.id)
   .then(() => {
-    res.redirect(`/editAll`);
+    res.redirect(`/`);
 
   })
   .catch(err => {

@@ -13,29 +13,32 @@ leData.findById = (id) => {
 }
 
 // INSERT/create new currency row in table data
-leData.create = currencies => {
+leData.create = data => {
   return db.one (
     `
       INSERT INTO currencies
-      (symbol, country, gfxcode)
-      VALUES ($1, $2, $3) RETURNING *
+      (symbol, country, gfxcode, ccode)
+      VALUES ($1, $2, $3, $4) RETURNING *
     `,
-    [currencies.symbol, currencies.country, currencies.gfxcode]
+    [data.symbol, data.country, data.gfxcode, data.ccode]
 
   );
 
 }
 
-leData.update = (currencies, id) => {
+leData.update = (data, id) => {
     return db.none(
     `
       UPDATE currencies SET
       symbol = $1,
       country = $2,
-      gfxcode = $3
-      WHERE id = $4
+      gfxcode = $3,
+      ccode = $4
+      
+      WHERE id = $5
+
     `,
-    [currencies.symbol, currencies.country, currencies.gfxcode, id]
+    [data.symbol, data.country, data.gfxcode, data.ccode, id]
 
   );
 
