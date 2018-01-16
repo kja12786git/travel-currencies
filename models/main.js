@@ -34,7 +34,7 @@ leData.update = (data, id) => {
       country = $2,
       gfxcode = $3,
       ccode = $4
-      
+
       WHERE id = $5
 
     `,

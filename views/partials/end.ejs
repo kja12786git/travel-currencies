@@ -1,3 +1,5 @@
+</main>
+<!--<nav id="nav-final" class="bottom"><ul><li><form action="/" method="get"><button>Back to Homepage</button></form></li><li><form action="/editAll" method="get"><button>Edit Currency Options</button></form></li></ul></nav> -->
 <script type="text/javascript">
 const logs = console.log;
 // set currency calculator return
@@ -24,6 +26,8 @@ const sel = {
   to: document.getElementById('to'),
 
   topH1:  document.getElementById('anelement'),
+
+  top5: document.getElementById('top5'),
 
   tofrom: () => {
               let x = sel.from.value;
@@ -77,7 +81,7 @@ const currency = () => {
 sel.amount.onfocus = () => {
   logs(`inputting... `);
 
-    this.onchange = () => {
+    sel.amount.onchange = () => {
       let amount = sel.amount.value;
       let to = sel.to.value;
       let from = sel.from.value;

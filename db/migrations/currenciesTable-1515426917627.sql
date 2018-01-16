@@ -1,4 +1,4 @@
-\c icons
+
 
 CREATE TABLE IF NOT EXISTS currencies (
   id BIGSERIAL PRIMARY KEY,

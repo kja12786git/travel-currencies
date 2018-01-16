@@ -1,9 +1,9 @@
 <% include ./partials/header.ejs %>
 <h1>Edit Currency Options</h1>
 
-<h3>Edit country name and matching data...</h3>
+<h2>Edit country name and matching data...</h2>
 <% currencies.forEach(table => { %>
-
+<section>
   <form action="<%= `/${table.id}/edit?_method=PUT` %>" method="POST">
   <label for="title">Change information for <b><%= table.country %></b></label><br>
   <input id="title" type="text" name="country" value="<%= table.country %>">
@@ -32,9 +32,10 @@
   <input type="submit" value="Delete from List" />
 </form>
 
+</section>
   <hr>
 <% }) %>
 
-<h3><a href="../">Return to Home</a></h3>
-
+<!--<h3><a href="../">Return to Home</a></h3> -->
+<br><br>
 <% include ./partials/end-plain.ejs %>

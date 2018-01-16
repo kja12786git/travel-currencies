@@ -1,19 +1,31 @@
 <% include ./partials/header.ejs %>
+<section>
 <h1>Currency Option for <%= currencies.symbol %></h1>
 
-<h2><%= currencies.country %> </h2>
+<h2><%= currencies.country %></h2>
 <p><%= currencies.symbol %></p>
 <p><%= currencies.gfxcode %></p>
 
 <form action="<%= `/${currencies.id}/edit` %>" method="GET">
   <input type="submit" value="Edit Details" />
-  
+
 </form>
 <form action="<%= `/${currencies.id}?_method=DELETE` %>" method="POST">
   <input type="submit" value="Delete from List" />
 
 </form>
-<h3><a href="../">Return to Home</a></h3>
+</section>
+<hr>
+<section>
+<h2>Top 5 with Cities with highest population: </h2>
+  <form action="<%= `/map?+${currencies.country}` %>" method="GET">
+    <% top5.forEach(data => { %>
+        <button><%= data.name %></button>
 
+    <% }) %>
+  </form>
+</section>
+
+<h3><a href="../">Return to Home</a></h3>
 
 <% include ./partials/end-plain.ejs %>

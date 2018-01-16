@@ -1,4 +1,4 @@
-\c icons
+
 
 INSERT INTO currencies (symbol, country, gfxcode, ccode) VALUES
   ('JPY', 'Japan', '¥', 'JPN'),
