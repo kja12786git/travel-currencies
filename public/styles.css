@@ -120,14 +120,14 @@ li {
   content: 'Beta Bug Report: Deleting info runs into a crashed page without proper redirect, but it works. Top 5 populated destinations are worldwide and no local to country.';
   display: block;
   top: 0;
-  color: grey;
+  color: #EEEFFF;
   font-size: 10px;
   font-weight: bold;
   font-family: sans-serif;
   width: 300px;
   padding: .35rem;
-  background-color: pink;
-  border: 1px dashed red;
+  background-color: transparent;
+  border: 1px dashed #EEEFFF;
   margin: .33em 0;
   margin: .33rem 0;
 
