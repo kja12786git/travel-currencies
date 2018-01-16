@@ -11,10 +11,9 @@
         <option>◄ Pick another</option>
         <% currencies.forEach(currency => { %>
           <option class="country" disabled><%= currency.country %></option>
-          <option id="ord-<%= currency.id %>" class="symbols" data-id="<%= currency.gfxcode %>"><%= currency.symbol %></option>
+          <option id="symbol-<%= currency.id %>" class="symbols" data-id="<%= currency.gfxcode %>"><%= currency.symbol %></option>
 
         <% }) %>
-
       </optgroup>
     </select><br>
     <li>Result: <input id="amount-alt" placeholder="0" disabled></li>
@@ -25,7 +24,7 @@
 <form method="get" action="/editAll"><button style="width: auto; height: 21px;">Edit Destination Currency Options</button></form>
 <form method="get" action="/new"><button style="width: auto; height: 21px;">Add Destination Currencies</button></form>
 <h3><a href="/maps">Check out a map for your selected currency...</a></h3>
-
+<%# city %>
 <script>
 
   // pull dropdown onchanges to change dest. symbol value

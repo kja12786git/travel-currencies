@@ -100,7 +100,7 @@ mainController.update = (req,res) => {
 
   }, req.params.id)
   .then(() => {
-      res.redirect(`/${req.params.id}/edit`)
+      res.redirect(`/${req.params.id}`)
 
   })
   .catch(err => {

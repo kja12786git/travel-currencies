@@ -26,7 +26,7 @@ leData.create = data => {
 
 }
 
-leData.update = (currencies, id) => {
+leData.update = (data, id) => {
     return db.none(
     `
       UPDATE currencies SET
@@ -34,10 +34,10 @@ leData.update = (currencies, id) => {
       country = $2,
       gfxcode = $3,
       ccode = $4,
-      WHERE id = $5,
-      
+      WHERE id = $5
+
     `,
-    [currencies.symbol, currencies.country, currencies.gfxcode, currencies.ccode, id]
+    [data.symbol, data.country, data.gfxcode, data.ccode, id]
 
   );
 
