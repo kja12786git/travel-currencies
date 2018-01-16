@@ -24,7 +24,12 @@
 <form method="get" action="/editAll"><button style="width: auto; height: 21px;">Edit Destination Currency Options</button></form>
 <form method="get" action="/new"><button style="width: auto; height: 21px;">Add Destination Currencies</button></form>
 <h3><a href="/maps">Check out a map for your selected currency...</a></h3>
-<%# city %>
+  <ul>
+    <%# city.forEach(data => { %>
+      <li><%# data.name %></li>
+
+    <%# }) %>
+  </ul>
 <script>
 
   // pull dropdown onchanges to change dest. symbol value

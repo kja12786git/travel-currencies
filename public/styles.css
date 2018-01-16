@@ -21,7 +21,7 @@ li {
 }
 
 #anelement:after {
-  content: 'Beta Bug Report: Singular edit page will post blank data. Delete runs into a crashed page but it works...';
+  content: 'Beta Bug Report: Capital CRUD is functional. Delete runs into a crashed page, but it works.';
   display: block;
   top: 0;
   color: grey;
