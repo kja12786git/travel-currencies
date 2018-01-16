@@ -1,35 +1,40 @@
 <% include ./partials/header.ejs %>
-<h1 id="anelement"></h1>
-<h1>Convert Currency Below:<h1>
-<form>
+<h3 id="anelement"></h3>
+<h3>Convert Currency Below:<h3>
+<form id="main">
   <ul><!-- worry about a inverse in an upgrade instead -->
-    <li>How many units? <input id="amount" type="number" placeholder="Enter Amount"></li><br>
+    <li>How many units? <span>$</span> <input id="amount" type="number" placeholder="Enter Amount"></li><br>
     <li>Base Currency: <input id="from" class="currency" method="post" maxlength="3" type="text" value="USD" disabled></li><br>
-    <li>Destination Currency: <span id="glyph">$</span> <input id="to" class="currency" method="post" maxlength="3" type="text" value="GBP" disabled></li>
+    <li>Destination Currency: <!--<span id="glyph">$</span>--> <input id="to" class="currency" method="post" maxlength="3" type="text" value="GBP" disabled>
     <select id="currencies-dd" type="dropdown">
       <optgroup>
-        <option>◄ Pick another</option>
+        <option>◄ Choose Options</option>
         <% currencies.forEach(currency => { %>
-          <option class="country" disabled><%= currency.country %></option>
-          <option id="symbol-<%= currency.id %>" class="symbols" data-id="<%= currency.gfxcode %>"><%= currency.symbol %></option>
+          <option id="<%= currency.country %>" class="country" disabled><%= currency.country %></option>
+          <option id="symbol-<%= currency.id %>" class="symbols" data-id="<%= currency.gfxcode %>" data-country="<%= currency.ccode %>"><%= currency.symbol %></option>
 
         <% }) %>
       </optgroup>
     </select><br>
-    <li>Result: <input id="amount-alt" placeholder="0" disabled></li>
+    </li>
+    <li>Result: <span id="glyph">£</span> <input id="amount-alt" placeholder="0" disabled></li>
 
   </ul>
 </form>
 
-<form method="get" action="/editAll"><button style="width: auto; height: 21px;">Edit Destination Currency Options</button></form>
-<form method="get" action="/new"><button style="width: auto; height: 21px;">Add Destination Currencies</button></form>
+<form method="get" action="/editAll"><button>Edit Destination Currency Options</button></form>
+<form method="get" action="/new"><button>Add Destination Currencies</button></form>
 <h3><a href="/maps">Check out a map for your selected currency...</a></h3>
-  <ul>
-    <%# city.forEach(data => { %>
-      <li><%# data.name %></li>
 
-    <%# }) %>
-  </ul>
+
+<!--    Top 5 with Cities with highest population:
+      <form action="<%= `/map?+${currencies.country}` %>" method="GET">
+        <%# top5.forEach(data => { %>
+            <button><%#= data.name %></button>
+
+        <%# }) %>
+      </form> -->
+
 <script>
 
   // pull dropdown onchanges to change dest. symbol value
@@ -62,6 +67,5 @@
   })
 
 </script>
-
 <%# include ./partials/endasGBP.ejs %>
 <% include ./partials/end.ejs %>

@@ -5,6 +5,107 @@ body {
   padding: 0;
 
 }
+body * {
+  margin: 0;
+  padding: 0;
+
+}
+
+nav {
+  position: fixed;
+  font-family: sans-serif;
+  background: rgba(0,0,0,.9);
+  color: white;
+  bottom: 0;
+  width: 100%;
+  max-height: 100px;
+  z-index: 1000;
+  display: block;
+
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+}
+
+nav > ul > li {
+  width: 100%;
+  padding: 0 1rem;
+
+
+}
+
+nav > ul > li button {
+  position: relative;
+  width: 100%;
+/*  font-size: 20px; */
+
+}
+
+header {
+  color: white;
+  background: black;
+  position: fixed;
+  top: 0;
+  padding: .33em;
+  padding: .33rem;
+
+
+}
+
+header > * {
+  font-size: 67%;
+
+}
+
+main {
+  margin: 3em 1em 3em 1em;
+  margin: 3rem 1rem ;
+
+}
+
+form#main ul li {
+  margin: 1em 0;
+  margin: 1rem 0;
+  border-bottom: 3px solid skyblue;
+  padding: .33em 0;
+  padding: .33rem 0;
+
+}
+
+section {
+    margin: 2em auto;
+    margin: 2rem auto;
+
+}
+
+button {
+  font-size: 1.5em;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 100%;
+  padding: .67em;
+
+}
+
+input, button {
+  width: 100%;
+  margin: .25rem 0;
+
+}
+
+input.currency {
+  width: 4em;
+  width: 4rem;
+  display: inline-block;
+  margin: .5em;
+  margin: .5rem;
+
+}
+
 ul {
   list-style: none;
 
@@ -15,13 +116,8 @@ li {
 
 }
 
-.currency {
-  width: 3em;
-  width: 3rem;
-}
-
 #anelement:after {
-  content: 'Beta Bug Report: Capital CRUD is functional. Delete runs into a crashed page, but it works.';
+  content: 'Beta Bug Report: Deleting info runs into a crashed page without proper redirect, but it works. Top 5 populated destinations are worldwide and no local to country.';
   display: block;
   top: 0;
   color: grey;
@@ -31,6 +127,10 @@ li {
   width: 300px;
   padding: .35rem;
   background-color: pink;
+  border: 1px dashed red;
+  margin: .33em 0;
+  margin: .33rem 0;
+
 
 }
 

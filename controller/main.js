@@ -1,31 +1,44 @@
 const mainModel = require('../models/main');
+const Cities = require('../models/cities');
 const mainController = {};
 
 mainController.index = (req,res) => {
   console.log('inside index method')
   mainModel.findAll()
-      .then(data => {
-        console.log('this is currencies: ', data)
-        res.render('index', {
-          currencies: data
-
-        })
+    .then(data => {
+      console.log('this is currencies: ', data)
+      res.render('index', {
+        currencies: data,
 
       })
-      .catch(err => {
-        console.log("were hitting an error")
-        res.status(400).json(err);
 
-      });
+    })
+    .catch(err => {
+      console.log("were hitting an error")
+      res.status(400).json(err);
+
+    });
 
 }
 
 mainController.each = (req,res) => {
   mainModel.findById(req.params.id)
   .then(data => {
-        console.log(`What are giving, db? In each... ${data}`)
-      res.render('show', {
-        currencies: data
+      console.log(`What are giving, db? In each... ${data}`)
+      Cities.findAll(req.params.id)
+      .then(cities => {
+        console.log(`${JSON.stringify(cities)} is top 5 city data & this is the targeted country code ${data.ccode}`)
+        res.render('show', {
+          currencies: data,
+          countrycode: data.ccode,
+          top5: cities
+
+        })
+
+      })
+      .catch(err => {
+        console.log("got an error from the each controller")
+        res.status(400).json(err);
 
       })
 

@@ -49,9 +49,15 @@ Include the full list of features that you are considering for POST MVP
 
 ## App Components
 
-  As part of MVP:
+* Utilizes currencylayer api to pull AJAX on the front-end and ability manipulate the data in real time loading once on each unique page load & only upon user changing input for efficiency due to usage limits.
 
-One page user experience...
+* Custom made table for postgresql including default dropdown options for user to pick Currency and currency related details including symbol, country name, country code and currency relevant glyphs.
+
+* As a second table source, a modified copy of geomap data from U02-D05 database which was relevant enough to use which is pulling. This has much more information than just currencies, but language data was manually stripped due to errors as well as non-need for this usage.
+
+**As part of MVP:**
+
+**Initial page as a one page user experience...**
 
 * Form for user input amount and pulls data on user change.
 * Base currency set based on api.
@@ -86,10 +92,10 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| The Initial Experience | H | 16hrs| 13hrs | - |
-| Editable Data | H | 5hrs| 16hrs | - |
-| Reworking/Polishing | H | 5hrs| 7hrs | - |
-| FE/Layout and Maps | L | 3hrs| 2hr | - |
+| The Initial Experience | H | 16hrs| 13hrs | 13hrs |
+| Editable Data | H | 5hrs| 21hrs | 21hrs |
+| Reworking/Polishing | H | 5hrs| 10hrs | 10hrs |
+| FE/Layout and Maps | L | 3hrs| 2hrs | 2hrs |
 
 
 ## Helper Functions
@@ -97,7 +103,7 @@ Helper functions should be generic enought that they can be reused in other appl
 
 | Function | Description |
 | --- | :---: |  
-| Array Cleaner | If no longer needs a multitude ofitems stored in a set array, this simple loop will clear it out and then you can use index[0] to push and pull something current. This may be good to control performance hit of large arrays, also. : |
+| Array Cleaner | If no longer needs a multitude of items stored in a set array, this simple loop will clear it out and then you can use index[0] to push and pull something current. This may be good to control performance hit of large arrays, also. : |
 
         named() => { while (arr.length > 0) } {arr.pop();};
 
@@ -133,7 +139,7 @@ Helper functions should be generic enought that they can be reused in other appl
 
  * Results for the default currency can be achieved accurately. However, the user being able to select every available currency was added to post MVP because I discovered that I cannot use a created variable of two elements and/or from an array index to concatenate the key selector of the required object. **Corrected this issue, selecting key via the active variable took a long while to find.**
 
- * I was initially going to add the country names somewhere visible on the DOM but I added them inside the dropdown selections instead which can be better in a way because it does leave the page cleaner. The good thing is it can still be duplicated from that element to be displayed, of course.
+ * I was initially going to add the country names somewhere visible on the DOM but I added them inside the dropdown selections instead which can be better in a way because it does leave the page cleaner. The good thing is it can still be duplicated from that element to be displayed if wanted.
 
 ## Issues and Resolutions
  Use this section to list of all major issues encountered and their resolution.
@@ -150,8 +156,8 @@ Helper functions should be generic enought that they can be reused in other appl
                     (symbol, country, gfxcode)
                     VALUES (null, null, null) RETURN *
 
-      **No resolution yet. I am having issues with the database returns and puts for some templates. My forms on some templates are sending null values into the db tables.**
+      **The culprit was missing name attribute from the DOM element which this would feed from the user input to the database.**
 
       * {"name":"error","length":94,"severity":"ERROR","code":"22P02","position":"37","file":"int8.c","line":"99","routine":"scanint8"}
 
-      **Resolution: Don't put /:id above other directories in the app.get route orders because this is what blocks them and causes this kind of error.**
+      **Resolution: Don't put /:id above other directories in the app.get route orders because this is what blocks them and caused this of error.**
