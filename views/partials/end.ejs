@@ -80,6 +80,7 @@ const currency = () => {
 // & render data to dom
 sel.amount.onfocus = () => {
   logs(`inputting... `);
+  sel.amount.value = 0;
 
     sel.amount.onchange = () => {
       let amount = sel.amount.value;
