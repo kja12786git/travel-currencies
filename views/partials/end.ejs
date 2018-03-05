@@ -52,7 +52,8 @@ const sel = {
 
 const currency = () => {
   let endpoint = 'convert'; // only for premium currencylayer api
-  let access_key = 'f837ff23f547c798a627fc281c063f05'; //  let access_key = '19b3253e311dac1b4eb26daef9c1c988';
+  let access_key = 'f837ff23f547c798a627fc281c063f05';
+//  let access_key = 'e71cb1ae697644aaa7db80b76860daab' // for openexchangerates
   let feedto = sel.amountre;
 //  let tofrom = sel.tofrom();
 //  logs(`${tofrom} tofrom value`)
@@ -60,6 +61,7 @@ const currency = () => {
     if (stored.amountres.length < 1) { // call only once per load
           $.ajax({
               url: `http://apilayer.net/api/live?access_key=${access_key}`,
+//              url: `https://openexchangerates.org/api/latest.json?app_id=${access_key}&base=USD`, //more accurate #s may need a different key due to data structure
               dataType: 'jsonp',
               success: function(json) {
                   logs(json.quotes); //log pulled data
